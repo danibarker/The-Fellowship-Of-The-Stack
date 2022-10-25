@@ -1,11 +1,12 @@
 const express = require("express");
+
 const router = new express.Router();
 const pool = require("../db");
 const auth = require("../middleware/auth");
 
-//search products by keyword found in title and description
+// search products by keyword found in title and description
 router.get("/search/:searchQuery", async (req, res) => {
-    let query = req.params.searchQuery.toUpperCase().split(" ");
+    const query = req.params.searchQuery.toUpperCase().split(" ");
     let queryString = "";
     query.forEach((term, index) => {
         if (index == 0) {
@@ -21,10 +22,10 @@ router.get("/search/:searchQuery", async (req, res) => {
     const products = result.rows;
     for (product of products) {
         const stockReq = await pool.query(
-            "SELECT * FROM stock where product_id = " + product["id"]
+            `SELECT * FROM stock where product_id = ${  product.id}`
         );
         const stock = stockReq.rows;
-        product["stock"] = stock;
+        product.stock = stock;
     }
     client.release(true);
     res.json(result.rows);
@@ -40,15 +41,15 @@ router.get("/get/:id", async (req, res) => {
         const productInfo = result.rows[0];
 
         const artistReq = await client.query(
-            "SELECT username FROM users WHERE id = " + productInfo["artist_id"]
+            `SELECT username FROM users WHERE id = ${  productInfo.artist_id}`
         );
         const artist = artistReq.rows[0].username;
-        productInfo["artist"] = artist;
+        productInfo.artist = artist;
         const stockReq = await pool.query(
-            "SELECT * FROM stock where product_id = " + productInfo["id"]
+            `SELECT * FROM stock where product_id = ${  productInfo.id}`
         );
         const stock = stockReq.rows;
-        productInfo["stock"] = stock;
+        productInfo.stock = stock;
         client.release(true);
         res.json(productInfo);
     } catch (e) {
@@ -62,18 +63,18 @@ router.get("/myProducts", auth, async (req, res) => {
     try {
         const client = await pool.connect();
         const result = await client.query(
-            "SELECT * FROM products WHERE artist_id=" + req.user.id
+            `SELECT * FROM products WHERE artist_id=${  req.user.id}`
         );
         const results = result.rows;
         const productsToSend = [];
         for (product of results) {
             const stockReq = await pool.query(
-                "SELECT * FROM stock where product_id = " + product["id"]
+                `SELECT * FROM stock where product_id = ${  product.id}`
             );
             const stock = stockReq.rows;
             const artist = req.user.username;
-            product["stock"] = stock;
-            product["artist"] = artist;
+            product.stock = stock;
+            product.artist = artist;
             productsToSend.push(product);
         }
         client.release(true);
@@ -87,21 +88,21 @@ router.get("/artistsProducts/:id", async (req, res) => {
     try {
         const client = await pool.connect();
         const result = await client.query(
-            "SELECT * FROM products WHERE artist_id=" + req.params.id
+            `SELECT * FROM products WHERE artist_id=${  req.params.id}`
         );
         const results = result.rows;
         const productsToSend = [];
         for (product of results) {
             const artistReq = await pool.query(
-                "SELECT username FROM users WHERE id = " + product["artist_id"]
+                `SELECT username FROM users WHERE id = ${  product.artist_id}`
             );
             const stockReq = await pool.query(
-                "SELECT * FROM stock where product_id = " + product["id"]
+                `SELECT * FROM stock where product_id = ${  product.id}`
             );
             const stock = stockReq.rows;
             const artist = artistReq.rows[0].username;
-            product["stock"] = stock;
-            product["artist"] = artist;
+            product.stock = stock;
+            product.artist = artist;
             productsToSend.push(product);
         }
         client.release(true);
@@ -120,15 +121,15 @@ router.get("/allProducts", async (req, res) => {
         const productsToSend = [];
         for (product of results) {
             const artistReq = await pool.query(
-                "SELECT username FROM users WHERE id = " + product["artist_id"]
+                `SELECT username FROM users WHERE id = ${  product.artist_id}`
             );
             const stockReq = await pool.query(
-                "SELECT * FROM stock where product_id = " + product["id"]
+                `SELECT * FROM stock where product_id = ${  product.id}`
             );
             const stock = stockReq.rows;
             const artist = artistReq.rows[0].username;
-            product["stock"] = stock;
-            product["artist"] = artist;
+            product.stock = stock;
+            product.artist = artist;
             productsToSend.push(product);
         }
         client.release(true);
@@ -152,7 +153,7 @@ router.post("/create", auth, async (req, res) => {
                 description,
                 colours,
                 sizes,
-                materials,
+                materials
             } = req.body.data;
             if (!colours || colours.length === 0) {
                 colours = [{ label: "O", value: "#444" }];
@@ -162,14 +163,12 @@ router.post("/create", auth, async (req, res) => {
             }
             // To sort the sizes entered in the correct order
             // Will sort numerical sizes numerically
-            let sizesOrder = ["XS", "S", "M", "L", "XL", "XXL"];
-            sizes.sort((a, b) => {
-                return (
+            const sizesOrder = ["XS", "S", "M", "L", "XL", "XXL"];
+            sizes.sort((a, b) => (
                     sizesOrder.indexOf(a.label) - sizesOrder.indexOf(b.label) ||
                     +a.label - +b.label
-                );
-            });
-            let productInfo = await pool.query(
+                ));
+            const productInfo = await pool.query(
                 "INSERT INTO products (title, price, description, colours, artist_id, sizes, materials) VALUES ($1, $2, $3,$4, $5,$6,$7) RETURNING id",
                 [
                     title,
@@ -178,7 +177,7 @@ router.post("/create", auth, async (req, res) => {
                     JSON.stringify(colours),
                     +req.user.id,
                     JSON.stringify(sizes),
-                    materials,
+                    materials
                 ]
             );
 
@@ -197,15 +196,15 @@ router.put("/edit/:id", auth, async (req, res) => {
         res.status(500).send("Not Authorized");
     } else {
         const { id } = req.params;
-        let checkOwner = await pool.query(
-            "SELECT artist_id from products WHERE id = " + id
+        const checkOwner = await pool.query(
+            `SELECT artist_id from products WHERE id = ${  id}`
         );
         if (checkOwner.rows[0].artist_id !== req.user.id) {
             res.status(500).send("Not Authorized");
         }
         if (Object.keys(req.body).length === 0) {
             res.send({
-                message: "Theres nobody!",
+                message: "Theres nobody!"
             });
         }
         try {
@@ -216,23 +215,21 @@ router.put("/edit/:id", auth, async (req, res) => {
                 colours,
                 sizes,
                 materials,
-                status,
-            } = req.body.data; //For use in set
+                status
+            } = req.body.data; // For use in set
             if (colours.length === 0) {
                 colours = [{ label: "O", value: "#444" }];
             }
             if (sizes.length === 0) {
                 sizes = [{ label: "O", price: "0" }];
             }
-            let sizesOrder = ["XS", "S", "M", "L", "XL", "XXL"];
-            sizes.sort((a, b) => {
-                return (
+            const sizesOrder = ["XS", "S", "M", "L", "XL", "XXL"];
+            sizes.sort((a, b) => (
                     sizesOrder.indexOf(a.label) - sizesOrder.indexOf(b.label) ||
                     +a.label - +b.label
-                );
-            });
+                ));
 
-            let response = await pool.query(
+            const response = await pool.query(
                 "UPDATE products SET title = $1, price = $2, description = $3, colours = $4, sizes = $5, materials = $6, status=$7 WHERE id = $8 RETURNING id",
                 [
                     title,
@@ -242,19 +239,19 @@ router.put("/edit/:id", auth, async (req, res) => {
                     JSON.stringify(sizes),
                     materials,
                     status,
-                    id,
+                    id
                 ]
             );
             if (status === "Backorder" || status === "Discontinue") {
                 const changeStockToZero = pool.query(
-                    "UPDATE stock set quantity = 0 where product_id =" + id
+                    `UPDATE stock set quantity = 0 where product_id =${  id}`
                 );
             }
             res.json(response.rows[0].id);
         } catch (err) {
             console.error(err.message);
             res.send({
-                message: "error",
+                message: "error"
             });
         }
     }
@@ -263,12 +260,12 @@ router.put("/edit/:id", auth, async (req, res) => {
 // Delete a product PLEASE ADD AUTH
 
 router.delete("/delete/:id", auth, async (req, res) => {
-    const id = req.params.id;
+    const {id} = req.params;
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
-        let checkOwner = await pool.query(
-            "SELECT artist_id from products WHERE id = " + id
+        const checkOwner = await pool.query(
+            `SELECT artist_id from products WHERE id = ${  id}`
         );
         if (checkOwner.rows[0].artist_id !== req.user.id) {
             res.status(500).send("Not Authorized");
@@ -284,7 +281,7 @@ router.delete("/delete/:id", auth, async (req, res) => {
         } catch (err) {
             console.error(err.message);
             res.send({
-                message: "error",
+                message: "error"
             });
         }
     }

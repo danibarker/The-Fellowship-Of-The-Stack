@@ -1,10 +1,11 @@
 const express = require("express");
+
 const router = new express.Router();
 const pool = require("../db");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const {
     orderConfirmation,
-    orderReadyForPickup,
+    orderReadyForPickup
 } = require("../helperFunctions/sendGridFunctions");
 const auth = require("../middleware/auth");
 const optionalAuth = require("../middleware/optionalAuth");
@@ -13,7 +14,7 @@ router.post("/stripe/payment", (req, res) => {
     const body = {
         source: req.body.token.id,
         amount: req.body.amount,
-        currency: "cad",
+        currency: "cad"
     };
     stripe.charges.create(body, (stripeErr, stripeRes) => {
         if (stripeErr) {
@@ -33,12 +34,12 @@ router.post("/paid", optionalAuth, async (req, res) => {
         address_line1,
         address_zip,
         address_city,
-        address_country,
+        address_country
     } = req.body.success.card;
     const { deliveryType, deliveryNote } = req.body.payment;
     const pickup = deliveryType === "pickup";
     const { items, payment } = req.body;
-    let orderResponse = await pool.query(
+    const orderResponse = await pool.query(
         `INSERT INTO orders
     (date, status, buyer_id, order_total, email, name, pickup, billing_address,shipping_address, delivery_notes)
     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) returning id`,
@@ -52,9 +53,9 @@ router.post("/paid", optionalAuth, async (req, res) => {
             pickup,
             `${address_line1} ${address_zip} ${address_city}, ${address_country}`,
             pickup
-                ? `For pickup`
+                ? "For pickup"
                 : `${address_line1} ${address_zip} ${address_city}, ${address_country}`,
-            deliveryNote,
+            deliveryNote
         ]
     );
 
@@ -69,11 +70,11 @@ router.post("/paid", optionalAuth, async (req, res) => {
                 item.id,
                 item.itemQuantity,
                 item.colour,
-                item.size,
+                item.size
             ]
         );
         const artistIDRes = await pool.query(
-            "SELECT artist_id FROM products where id = " + item.id
+            `SELECT artist_id FROM products where id = ${  item.id}`
         );
         const artistID = artistIDRes.rows[0].artist_id;
         const salesByProduct = await pool.query(
@@ -89,7 +90,7 @@ router.post("/paid", optionalAuth, async (req, res) => {
                 artistID,
                 item.colour,
                 item.size,
-                new Date().toLocaleString().replace(/\./g, ""),
+                new Date().toLocaleString().replace(/\./g, "")
             ]
         );
 
@@ -113,7 +114,7 @@ router.put("/edit/:orderid", auth, async (req, res) => {
     const { orderStatus } = req.body;
     if (orderStatus.length === 0) {
         res.send({
-            message: "You have to give me data to update with!",
+            message: "You have to give me data to update with!"
         });
     }
 
@@ -130,7 +131,7 @@ router.put("/edit/:orderid", auth, async (req, res) => {
 
     try {
         const order = await pool.query(
-            `UPDATE orders SET status = $1, ship_date = $2 WHERE id = $3`,
+            "UPDATE orders SET status = $1, ship_date = $2 WHERE id = $3",
             [updatedOrder.status, updatedOrder.ship_date, req.params.orderid]
         );
 
@@ -150,7 +151,7 @@ router.put("/edit/:orderid", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });

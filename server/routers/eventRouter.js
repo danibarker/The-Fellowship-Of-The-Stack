@@ -1,15 +1,16 @@
 const express = require("express");
+
 const router = new express.Router();
 const pool = require("../db");
 const {
     goingToEvent,
-    notGoingToEvent,
+    notGoingToEvent
 } = require("../helperFunctions/sendGridFunctions");
 const auth = require("../middleware/auth");
 
-//search events by keyword found in title and description or artist name
+// search events by keyword found in title and description or artist name
 router.get("/search/:searchQuery", async (req, res) => {
-    let query = req.params.searchQuery.toUpperCase().split(" ");
+    const query = req.params.searchQuery.toUpperCase().split(" ");
     let queryString = "";
     query.forEach((term, index) => {
         if (index == 0) {
@@ -64,8 +65,8 @@ router.get("/get/:id", async (req, res) => {
     }
 });
 
-//Get all products
-//change this to use auth instead of req.params
+// Get all products
+// change this to use auth instead of req.params
 router.get("/artistsEvents/:id", async (req, res) => {
     try {
         const result = await pool.query(
@@ -119,24 +120,24 @@ router.get("/myArtistsEvents/", auth, async (req, res) => {
             WHERE e.host= ${req.user.id}
             `
         );
-        let results = eventresult.rows;
+        const results = eventresult.rows;
         for (result of results) {
-            let options = {
+            const options = {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
-                day: "numeric",
+                day: "numeric"
             };
 
-            let resultsStartDate = new Date(result.start_time);
+            const resultsStartDate = new Date(result.start_time);
 
-            let startDate = resultsStartDate.toLocaleDateString(
+            const startDate = resultsStartDate.toLocaleDateString(
                 "en-US",
                 options
             );
 
-            let resultsEndDate = new Date(result.end_time);
-            let endDate = resultsEndDate.toLocaleDateString("en-US", options);
+            const resultsEndDate = new Date(result.end_time);
+            const endDate = resultsEndDate.toLocaleDateString("en-US", options);
             result.start_time = startDate;
             result.end_time = endDate;
         }
@@ -202,14 +203,14 @@ router.get("/allEvents", async (req, res) => {
     }
 });
 
-//create event
+// create event
 
 router.post("/create", auth, async (req, res) => {
     if (!req.user.is_artist) {
         res.status(501).send("Not Authorized");
     } else {
         try {
-            let {
+            const {
                 name,
                 description,
                 status,
@@ -217,9 +218,9 @@ router.post("/create", auth, async (req, res) => {
                 startTime,
                 endTime,
                 location,
-                type,
+                type
             } = req.body.data;
-            let eventInfo = await pool.query(
+            const eventInfo = await pool.query(
                 `
             INSERT INTO events(
                 name, host, description, status, capacity, 
@@ -237,7 +238,7 @@ router.post("/create", auth, async (req, res) => {
                     startTime,
                     endTime,
                     location,
-                    type,
+                    type
                 ]
             );
             pool.query(
@@ -259,15 +260,15 @@ router.put("/edit/:eventId", auth, async (req, res) => {
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
-        let checkOwner = await pool.query(
-            "SELECT host from events WHERE id = " + eventId
+        const checkOwner = await pool.query(
+            `SELECT host from events WHERE id = ${  eventId}`
         );
         if (checkOwner.rows[0].host !== req.user.id) {
             res.status(500).send("Not Authorized");
         }
         if (Object.keys(req.body).length === 0) {
             res.send({
-                message: "Theres nobody!",
+                message: "Theres nobody!"
             });
         }
         try {
@@ -280,11 +281,11 @@ router.put("/edit/:eventId", auth, async (req, res) => {
                 startTime,
                 endTime,
                 location,
-                type,
+                type
             } = req.body.data;
 
-            let current = await pool.query(
-                `SELECT * FROM events WHERE id = $1 `,
+            const current = await pool.query(
+                "SELECT * FROM events WHERE id = $1 ",
                 [eventId]
             );
             const currentEvent = current.rows[0];
@@ -299,7 +300,7 @@ router.put("/edit/:eventId", auth, async (req, res) => {
             location = location || currentEvent.location;
             type = type || currentEvent.type;
 
-            let response = await pool.query(
+            const response = await pool.query(
                 `UPDATE events SET 
             name = $1, host = $2, description = $3, 
             status = $4, capacity = $5, start_time = $6, 
@@ -315,7 +316,7 @@ router.put("/edit/:eventId", auth, async (req, res) => {
                     endTime,
                     location,
                     type,
-                    eventId,
+                    eventId
                 ]
             );
 
@@ -323,7 +324,7 @@ router.put("/edit/:eventId", auth, async (req, res) => {
         } catch (err) {
             console.error(err.message, "/edit/:id");
             res.send({
-                message: "error",
+                message: "error"
             });
         }
     }
@@ -332,12 +333,12 @@ router.put("/edit/:eventId", auth, async (req, res) => {
 // Delete an event PLEASE ADD AUTH
 
 router.delete("/delete/:id", auth, async (req, res) => {
-    const id = req.params.id;
+    const {id} = req.params;
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
-        let checkOwner = await pool.query(
-            "SELECT host from events WHERE id = " + id
+        const checkOwner = await pool.query(
+            `SELECT host from events WHERE id = ${  id}`
         );
         if (checkOwner.rows[0].host !== req.user.id) {
             res.status(500).send("Not Authorized");
@@ -347,7 +348,7 @@ router.delete("/delete/:id", auth, async (req, res) => {
         }
         try {
             await pool.query("DELETE FROM event_images WHERE event_id = $1", [
-                id,
+                id
             ]);
             await pool.query(
                 "DELETE FROM events_attendees WHERE event_id = $1",
@@ -358,12 +359,12 @@ router.delete("/delete/:id", auth, async (req, res) => {
         } catch (err) {
             console.error(err.message, "/delete/:id");
             res.send({
-                message: "error",
+                message: "error"
             });
         }
     }
 });
-//change to auth and use auth for id instead of req.params
+// change to auth and use auth for id instead of req.params
 router.post("/attend/:event", auth, (req, res) => {
     const { event } = req.params;
     const { status, reminder } = req.body;
@@ -390,8 +391,8 @@ router.post("/join", auth, async (req, res) => {
         `SELECT u.username FROM users u INNER JOIN events_attendees a ON u.id = a.attendee WHERE a.type = 'collab' AND a.event_id = ${eventID}`
     );
     const attResponse = await pool.query(
-        `SELECT h.username as host_name, e.name as event_name, e.description, e.start_time, e.end_time, e.location, a.event_id, u.email, u.name from events_attendees a INNER JOIN users u ON a.attendee = u.id INNER JOIN events e ON e.id=a.event_id INNER JOIN users h ON h.id=e.host WHERE a.event_id = ${eventID} and u.id = ` +
-            req.user.id
+        `SELECT h.username as host_name, e.name as event_name, e.description, e.start_time, e.end_time, e.location, a.event_id, u.email, u.name from events_attendees a INNER JOIN users u ON a.attendee = u.id INNER JOIN events e ON e.id=a.event_id INNER JOIN users h ON h.id=e.host WHERE a.event_id = ${eventID} and u.id = ${ 
+            req.user.id}`
     );
     attendee = attResponse.rows[0];
     goingToEvent(attendee, collabs.rows);
@@ -399,7 +400,7 @@ router.post("/join", auth, async (req, res) => {
     res.send("joined");
 });
 
-//user not going
+// user not going
 
 router.delete("/not-attending/:event", auth, async (req, res) => {
     const event_id = req.params.event;
@@ -420,7 +421,7 @@ router.delete("/not-attending/:event", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message, "/not-attending/:event");
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -445,7 +446,7 @@ router.get("/not-attending/email/:eventid/:id", async (req, res) => {
 router.get("/amIGoing/:eventid", auth, async (req, res) => {
     try {
         const response = await pool.query(
-            `SELECT * FROM events_attendees WHERE event_id = $1 AND attendee=$2`,
+            "SELECT * FROM events_attendees WHERE event_id = $1 AND attendee=$2",
             [req.params.eventid, req.user.id]
         );
         const going = response.rows.length === 1;

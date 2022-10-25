@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = new express.Router();
 const pool = require("../db");
 const auth = require("../middleware/auth");
@@ -105,27 +106,27 @@ router.get("/customer-orders", auth, async (req, res) => {
 
         const orderInfo = result.rows;
         for (order of orderInfo) {
-            let options = {
+            const options = {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
-                day: "numeric",
+                day: "numeric"
             };
 
-            let ordersDate = new Date(order.date);
+            const ordersDate = new Date(order.date);
 
-            let orderDate = ordersDate.toLocaleDateString("en-US", options);
+            const orderDate = ordersDate.toLocaleDateString("en-US", options);
 
-            let orderTime = ordersDate.toLocaleTimeString([], {
+            const orderTime = ordersDate.toLocaleTimeString([], {
                 hour: "2-digit",
-                minute: "2-digit",
+                minute: "2-digit"
             });
             order.orderTime = orderTime;
             order.orderDate = orderDate;
 
-            let orderShipDate = new Date(order.ship_date);
+            const orderShipDate = new Date(order.ship_date);
 
-            let shipDate = orderShipDate.toLocaleDateString("en-US", options);
+            const shipDate = orderShipDate.toLocaleDateString("en-US", options);
             order.orderShipDate = order.ship_date === null ? null : shipDate;
         }
 
@@ -156,27 +157,27 @@ router.get("/recent-orders", auth, async (req, res) => {
 
         const orderInfo = result.rows;
         for (order of orderInfo) {
-            let options = {
+            const options = {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
-                day: "numeric",
+                day: "numeric"
             };
 
-            let ordersDate = new Date(order.date);
+            const ordersDate = new Date(order.date);
 
-            let orderDate = ordersDate.toLocaleDateString("en-US", options);
+            const orderDate = ordersDate.toLocaleDateString("en-US", options);
 
-            let orderTime = ordersDate.toLocaleTimeString([], {
+            const orderTime = ordersDate.toLocaleTimeString([], {
                 hour: "2-digit",
-                minute: "2-digit",
+                minute: "2-digit"
             });
             order.orderTime = orderTime;
             order.orderDate = orderDate;
 
-            let orderShipDate = new Date(order.ship_date);
+            const orderShipDate = new Date(order.ship_date);
 
-            let shipDate = orderShipDate.toLocaleDateString("en-US", options);
+            const shipDate = orderShipDate.toLocaleDateString("en-US", options);
             order.orderShipDate = order.ship_date === null ? null : shipDate;
         }
 
@@ -200,27 +201,27 @@ router.get("/shopper-order/:orderid", auth, async (req, res) => {
         );
         const orderInfo = result.rows;
         for (order of orderInfo) {
-            let options = {
+            const options = {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
-                day: "numeric",
+                day: "numeric"
             };
 
-            let ordersDate = new Date(order.date);
+            const ordersDate = new Date(order.date);
 
-            let orderDate = ordersDate.toLocaleDateString("en-US", options);
+            const orderDate = ordersDate.toLocaleDateString("en-US", options);
 
-            let orderTime = ordersDate.toLocaleTimeString([], {
+            const orderTime = ordersDate.toLocaleTimeString([], {
                 hour: "2-digit",
-                minute: "2-digit",
+                minute: "2-digit"
             });
             order.orderTime = orderTime;
             order.orderDate = orderDate;
 
-            let orderShipDate = new Date(order.ship_date);
+            const orderShipDate = new Date(order.ship_date);
 
-            let shipDate = orderShipDate.toLocaleDateString("en-US", options);
+            const shipDate = orderShipDate.toLocaleDateString("en-US", options);
             order.orderShipDate = order.ship_date === null ? null : shipDate;
         }
 
@@ -228,7 +229,7 @@ router.get("/shopper-order/:orderid", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -245,27 +246,27 @@ router.get("/order/:orderid", auth, async (req, res) => {
         );
         const orderInfo = result.rows;
         for (order of orderInfo) {
-            let options = {
+            const options = {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
-                day: "numeric",
+                day: "numeric"
             };
 
-            let ordersDate = new Date(order.date);
+            const ordersDate = new Date(order.date);
 
-            let orderDate = ordersDate.toLocaleDateString("en-US", options);
+            const orderDate = ordersDate.toLocaleDateString("en-US", options);
 
-            let orderTime = ordersDate.toLocaleTimeString([], {
+            const orderTime = ordersDate.toLocaleTimeString([], {
                 hour: "2-digit",
-                minute: "2-digit",
+                minute: "2-digit"
             });
             order.orderTime = orderTime;
             order.orderDate = orderDate;
 
-            let orderShipDate = new Date(order.ship_date);
+            const orderShipDate = new Date(order.ship_date);
 
-            let shipDate = orderShipDate.toLocaleDateString("en-US", options);
+            const shipDate = orderShipDate.toLocaleDateString("en-US", options);
             order.orderShipDate = order.ship_date === null ? null : shipDate;
         }
 
@@ -273,14 +274,14 @@ router.get("/order/:orderid", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
 
 router.get("/driver/order-to-fulfill", auth, async (req, res) => {
     try {
-        let deliveries = await pool.query(
+        const deliveries = await pool.query(
             `SELECT o.id, o.name, o.shipping_address, o.deliverer_id, o. status FROM orders o INNER JOIN order_items i ON i.order_id = o.id WHERE o.status = 'Ready for Delivery' OR (o.status = 'Driver Assigned' AND o.deliverer_id = ${req.user.id}) GROUP BY i.order_id, o.id`
         );
 
@@ -288,29 +289,29 @@ router.get("/driver/order-to-fulfill", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
 
 router.get("/driver/past-deliveries", auth, async (req, res) => {
     try {
-        let deliveries = await pool.query(
+        const deliveries = await pool.query(
             `SELECT * FROM orders WHERE status = 'Delivered' AND deliverer_id = ${req.user.id} GROUP BY id`
         );
-        let pastDeliveries = deliveries.rows;
+        const pastDeliveries = deliveries.rows;
 
         for (order of pastDeliveries) {
-            let options = {
+            const options = {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
-                day: "numeric",
+                day: "numeric"
             };
 
-            let orderShipDate = new Date(order.ship_date);
+            const orderShipDate = new Date(order.ship_date);
 
-            let shipDate = orderShipDate.toLocaleDateString("en-US", options);
+            const shipDate = orderShipDate.toLocaleDateString("en-US", options);
             order.orderShipDate = order.ship_date === null ? null : shipDate;
         }
 
@@ -318,7 +319,7 @@ router.get("/driver/past-deliveries", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -333,7 +334,7 @@ router.put("/driver/order-to-fulfill/add/:orderid", auth, (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -347,7 +348,7 @@ router.put("/driver/order-to-fulfill/remove/:orderid", auth, (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -365,7 +366,7 @@ router.get("/driver/order-to-fulfill/:orderid", async (req, res) => {
         res.json(singleDelivery.rows);
     } catch (err) {
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -387,7 +388,7 @@ router.get("/driver/past/:orderid", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -409,7 +410,7 @@ router.get("/driver/assigned-pickups", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -431,7 +432,7 @@ router.get("/driver/assigned-pickups/:artistid", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -454,22 +455,16 @@ router.get("/driver/ready-deliveries", auth, async (req, res) => {
             `SELECT o.* FROM orders o INNER JOIN (SELECT order_id FROM order_items WHERE driver_status IS NULL GROUP BY order_id) p ON p.order_id=o.id  WHERE deliverer_id=${req.user.id} AND status='Driver Assigned'  ORDER BY order_id`
         );
 
-        let incompleteOrders = resIncompleteOrders.rows;
-        let deliveries = resDeliveries.rows;
+        const incompleteOrders = resIncompleteOrders.rows;
+        const deliveries = resDeliveries.rows;
 
-        let incompleteOrdersIDs = incompleteOrders.map((order) => {
-            return order.id;
-        });
-        let deliveriesIDs = deliveries.map((order) => {
-            return order.id;
-        });
+        const incompleteOrdersIDs = incompleteOrders.map((order) => order.id);
+        const deliveriesIDs = deliveries.map((order) => order.id);
 
         const completedDeliveries = (incompleteOrdersIDs, deliveriesIDs) => {
-            const diff = (deliveriesIDs, incompleteOrdersIDs) => {
-                return deliveriesIDs.filter(
+            const diff = (deliveriesIDs, incompleteOrdersIDs) => deliveriesIDs.filter(
                     (item) => incompleteOrdersIDs.indexOf(item) === -1
                 );
-            };
             return Array.from(
                 new Set([...diff(deliveriesIDs, incompleteOrdersIDs)])
             );
@@ -480,15 +475,13 @@ router.get("/driver/ready-deliveries", auth, async (req, res) => {
             deliveriesIDs
         );
 
-        let readyForDelivery = completedDeliveriesResults.map((id) => {
-            return deliveries.filter((delivery) => delivery.id === id)[0];
-        });
+        const readyForDelivery = completedDeliveriesResults.map((id) => deliveries.filter((delivery) => delivery.id === id)[0]);
 
         res.json(readyForDelivery);
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -496,15 +489,15 @@ router.get("/driver/ready-deliveries", auth, async (req, res) => {
 router.put("/driver/deliveries/update/:orderid", auth, (req, res) => {
     try {
         if (req.body.status === "Delivered") {
-            let shipDate = new Date();
+            const shipDate = new Date();
             pool.query(
-                `UPDATE orders SET status = $1, ship_date = $2 WHERE deliverer_id = $3 AND id = $4 `,
+                "UPDATE orders SET status = $1, ship_date = $2 WHERE deliverer_id = $3 AND id = $4 ",
                 [req.body.status, shipDate, req.user.id, req.params.orderid]
             );
             res.send("Updated");
         } else {
             pool.query(
-                `UPDATE orders SET status = $1 WHERE deliverer_id = $2 AND id = $3`,
+                "UPDATE orders SET status = $1 WHERE deliverer_id = $2 AND id = $3",
                 [req.body.status, req.user.id, req.params.orderid]
             );
             res.send("Updated");
@@ -512,7 +505,7 @@ router.put("/driver/deliveries/update/:orderid", auth, (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
@@ -520,14 +513,14 @@ router.put("/driver/deliveries/update/:orderid", auth, (req, res) => {
 router.put("/driver/assigned-pickups/", auth, async (req, res) => {
     try {
         await pool.query(
-            `update order_items SET driver_status = $1 WHERE id = $2`,
+            "update order_items SET driver_status = $1 WHERE id = $2",
             [req.body.driverStatus, req.body.singleID]
         );
         res.send("Updated");
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });

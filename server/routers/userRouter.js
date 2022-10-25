@@ -1,22 +1,23 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const pool = require("../db");
+
 const router = new express.Router();
 const auth = require("../middleware/auth");
 const {
     generateAuthToken,
-    findByCredentials,
+    findByCredentials
 } = require("../helperFunctions/index");
 const {
     newAccount,
-    addToNewsletter,
+    addToNewsletter
 } = require("../helperFunctions/sendGridFunctions");
 
 router.post("/create", async (req, res, next) => {
     const user = req.body.data;
     const hashPassword = await bcrypt.hash(user.password, 8);
     const data = await pool.query(
-        `INSERT INTO users (username, password, email, address, is_artist, is_driver, name) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id`,
+        "INSERT INTO users (username, password, email, address, is_artist, is_driver, name) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id",
         [
             user.username,
             hashPassword,
@@ -24,15 +25,15 @@ router.post("/create", async (req, res, next) => {
             user.address,
             user.isArtist,
             user.isDriver,
-            user.name,
+            user.name
         ]
     );
 
     newAccount(user.name, user.email);
     const token = generateAuthToken(data.rows[0]);
-    pool.query(`INSERT INTO tokens (user_id, token) VALUES ($1, $2)`, [
+    pool.query("INSERT INTO tokens (user_id, token) VALUES ($1, $2)", [
         data.rows[0].id,
-        token,
+        token
     ]);
 
     const createUser = data.rows[0];
@@ -52,9 +53,9 @@ router.post("/login", async (req, res, next) => {
     try {
         const user = await findByCredentials(req.body.email, req.body.password);
         const token = generateAuthToken(user);
-        pool.query(`INSERT INTO tokens (user_id, token) VALUES ($1, $2)`, [
+        pool.query("INSERT INTO tokens (user_id, token) VALUES ($1, $2)", [
             user.id,
-            token,
+            token
         ]);
         // var hour = 3600000
         // req.session.cookie.expires = new Date(Date.now() + hour)
@@ -70,17 +71,17 @@ router.post("/login", async (req, res, next) => {
 router.get("/get", auth, (req, res) => {
     res.send(req.user);
 });
-//server endpoint for updating user
+// server endpoint for updating user
 
-//put the auth middleware which will get the user
+// put the auth middleware which will get the user
 
 router.put("/update", auth, async (req, res, next) => {
-    const user = req.user; //this is where the user is, looking at auth.js
-    const updatedUser = {}; //this is what we're going to send into the query
-    //now we have the user obj,
-    //do an update query on the db
-    //stuff is in req.body wwe want to add those props into the updated
-    //but the props that are in the user and not in the updated user we want to add to the updated user
+    const {user} = req; // this is where the user is, looking at auth.js
+    const updatedUser = {}; // this is what we're going to send into the query
+    // now we have the user obj,
+    // do an update query on the db
+    // stuff is in req.body wwe want to add those props into the updated
+    // but the props that are in the user and not in the updated user we want to add to the updated user
     updatedUser.username = req.body.data.username || user.username;
     updatedUser.name = req.body.data.name || user.name;
     updatedUser.email = req.body.data.email || user.email;
@@ -98,9 +99,9 @@ router.put("/update", auth, async (req, res, next) => {
             : req.body.data.isDriver === true
             ? true
             : user.is_driver;
-    //now we need to change whats in the updatedUser array, this does the update
+    // now we need to change whats in the updatedUser array, this does the update
     const data = await pool.query(
-        `UPDATE users SET username=$1, email=$2, address=$3, store_address=$4, is_artist=$5, is_driver=$6, name=$7 WHERE id=$8 RETURNING username  `,
+        "UPDATE users SET username=$1, email=$2, address=$3, store_address=$4, is_artist=$5, is_driver=$6, name=$7 WHERE id=$8 RETURNING username  ",
         [
             updatedUser.username,
             updatedUser.email,
@@ -109,7 +110,7 @@ router.put("/update", auth, async (req, res, next) => {
             updatedUser.isArtist,
             updatedUser.isDriver,
             updatedUser.name,
-            user.id,
+            user.id
         ]
     );
     res.cookie("isArtist", user.is_artist, { maxAge: Infinity + 1 });
@@ -122,7 +123,7 @@ router.post("/newsletter-signup", (req, res) => {
     try {
         const { email } = req.body;
 
-        pool.query(`INSERT INTO newsletter(email) VALUES ($1)`, [email]);
+        pool.query("INSERT INTO newsletter(email) VALUES ($1)", [email]);
         res.json("Added to newsletter sign ups!");
         addToNewsletter(email);
     } catch (e) {
@@ -132,7 +133,7 @@ router.post("/newsletter-signup", (req, res) => {
     }
 });
 
-router.get('/me', auth, (req, res) => {
+router.get("/me", auth, (req, res) => {
     res.send(req.user)
 })
 module.exports = router;

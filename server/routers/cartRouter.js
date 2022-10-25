@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = new express.Router();
 const pool = require("../db");
 const optionalAuth = require("../middleware/optionalAuth");
@@ -32,21 +33,21 @@ router.get(
         const itemQuery = await pool.query(`SELECT quantity FROM cart_items WHERE
         user_id = '${userID}' AND product_id = ${cartProduct} 
         AND colour=${colour} AND size=${size}`);
-        const quantity = itemQuery.rows[0].quantity;
+        const {quantity} = itemQuery.rows[0];
         res.status(200).send(quantity);
     }
 );
 router.post("/add", optionalAuth, async (req, res) => {
     const { cartProduct, colour, size, quantity, session } = req.body;
     const userID = req.user.id || session;
-    let checkForCart = await pool.query(
+    const checkForCart = await pool.query(
         `SELECT id from carts WHERE user_id = '${userID}'`
     );
     let cartID;
     if (checkForCart.rows.length > 0) {
         cartID = checkForCart.rows[0].id;
     } else {
-        let cartResponse = await pool.query(
+        const cartResponse = await pool.query(
             `INSERT INTO carts (user_id) values ('${userID}') RETURNING id`
         );
         cartID = cartResponse.rows[0].id;
@@ -68,10 +69,10 @@ router.post("/add", optionalAuth, async (req, res) => {
 router.put("/edit", optionalAuth, async (req, res) => {
     const { cartProduct, colour, size, quantity, session } = req.body;
     const userID = req.user.id || session;
-    let checkForCart = await pool.query(
+    const checkForCart = await pool.query(
         `SELECT id from carts WHERE user_id = '${userID}'`
     );
-    let cartID = checkForCart.rows[0].id;
+    const cartID = checkForCart.rows[0].id;
     const update = await pool.query(`UPDATE cart_items SET quantity = ${quantity}
     WHERE product_id=${cartProduct} AND colour='${colour}' 
     AND size='${size}' AND cart_id='${cartID}'`);
@@ -85,11 +86,11 @@ router.delete("/remove", optionalAuth, async (req, res) => {
 router.delete("/clear", optionalAuth, async (req, res) => {
     const { session } = req.body;
     const userID = req.user.id || session;
-    let checkForCart = await pool.query(
+    const checkForCart = await pool.query(
         `SELECT id from carts WHERE user_id = '${userID}'`
     );
-    let cartID = checkForCart.rows[0].id;
-    let clearCart = await pool.query(
+    const cartID = checkForCart.rows[0].id;
+    const clearCart = await pool.query(
         `DELETE FROM cart_items WHERE cart_id = ${cartID};DELETE FROM carts WHERE id=${cartID}`
     );
 });

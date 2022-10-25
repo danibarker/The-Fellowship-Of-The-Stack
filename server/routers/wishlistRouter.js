@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const pool = require("../db");
+
 const router = new express.Router();
 const auth = require("../middleware/auth");
 
@@ -8,7 +9,7 @@ router.get("/", auth, async (req, res) => {
     try {
         const userID = req.user.id;
         const wishlistQuery = await pool.query(
-            "SELECT * FROM wishlists WHERE user_id = " + userID
+            `SELECT * FROM wishlists WHERE user_id = ${  userID}`
         );
         const wishlistID = wishlistQuery.rows[0].id;
         const itemsQuery = await pool.query(
@@ -21,17 +22,17 @@ router.get("/", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
 
 router.put("/add", auth, async (req, res) => {
     try {
-        let { productID } = req.body.data;
-        let userWishlist = await pool.query(`
+        const { productID } = req.body.data;
+        const userWishlist = await pool.query(`
     SELECT id FROM wishlists WHERE user.id = ${req.user.id}`);
-        let wishlistInfo = await pool.query(
+        const wishlistInfo = await pool.query(
             `INSERT INTO wishlist_items (product_id, wishlist_id)
                 VALUES ($1, $2) RETURNING id `,
             [productID, userWishlist.rows[0].id]
@@ -40,14 +41,14 @@ router.put("/add", auth, async (req, res) => {
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });
 
 router.delete("/delete", auth, async (req, res) => {
-    let { productID } = req.body.data;
-    let userWishlist = await pool.query(`
+    const { productID } = req.body.data;
+    const userWishlist = await pool.query(`
 SELECT id FROM wishlists WHERE user.id = ${req.user.id}`);
     try {
         await pool.query(
@@ -59,7 +60,7 @@ SELECT id FROM wishlists WHERE user.id = ${req.user.id}`);
     } catch (err) {
         console.error(err.message);
         res.send({
-            message: "error",
+            message: "error"
         });
     }
 });

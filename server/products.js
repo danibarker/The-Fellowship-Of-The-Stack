@@ -13,7 +13,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "fits up to 15 inch laptop",
         size: "30 30 30",
-        materials: "made with nylon and cotton",
+        materials: "made with nylon and cotton"
     },
     {
         id: 2,
@@ -29,7 +29,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "slim fit",
         size: "20 20 20",
-        materials: "polyester",
+        materials: "polyester"
     },
     {
         id: 3,
@@ -45,7 +45,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "slim fit",
         size: "20 20 20",
-        materials: "polyester",
+        materials: "polyester"
     },
     {
         id: 4,
@@ -61,7 +61,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "slim fit",
         size: "20 20 20",
-        materials: "polyester",
+        materials: "polyester"
     },
     {
         id: 5,
@@ -77,7 +77,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "slim fit",
         size: "20 20 20",
-        materials: "gold and silver",
+        materials: "gold and silver"
     },
     {
         id: 6,
@@ -93,7 +93,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "9 inch circumference",
         size: "6 6 6",
-        materials: "gold",
+        materials: "gold"
     },
     {
         id: 7,
@@ -111,7 +111,7 @@ module.exports = [
         size_and_fit:
             "size 7, can be resized but will take and extra day for shipping",
         size: "3 3 3",
-        materials: "white gold",
+        materials: "white gold"
     },
     {
         id: 8,
@@ -129,7 +129,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "0 gauge",
         size: "2 2 2",
-        materials: "rose gold",
+        materials: "rose gold"
     },
     {
         id: 9,
@@ -147,7 +147,7 @@ module.exports = [
         quantity: 3,
         size_and_fit: "standard US sizing",
         size: "20 20 20",
-        materials: "polyester",
+        materials: "polyester"
     },
     {
         id: 10,
@@ -165,7 +165,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "standard US sizing",
         size: "20 20 20",
-        materials: "polyurethane, polyester, cotton, faux leather",
+        materials: "polyurethane, polyester, cotton, faux leather"
     },
     {
         id: 11,
@@ -181,7 +181,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "standard US sizing",
         size: "20 20 20",
-        materials: "polyester, cotton",
+        materials: "polyester, cotton"
     },
     {
         id: 12,
@@ -198,7 +198,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "standard US sizing",
         size: "20 20 20",
-        materials: "rayon, spandex",
+        materials: "rayon, spandex"
     },
     {
         id: 13,
@@ -214,7 +214,7 @@ module.exports = [
         artist_id: 1,
         size_and_fit: "standard US sizing",
         size: "20 20 20",
-        materials: "polyester",
+        materials: "polyester"
     },
     {
         id: 14,
@@ -232,6 +232,6 @@ module.exports = [
         quantity:34,
         size_and_fit: "standard US sizing",
         size: "20 20 20",
-        materials: "cotton, spandex",
-    },
+        materials: "cotton, spandex"
+    }
 ];

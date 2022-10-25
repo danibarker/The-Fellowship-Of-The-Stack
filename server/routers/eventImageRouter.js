@@ -9,11 +9,11 @@ require("dotenv").config();
 
 const router = express.Router();
 const storage = multer.memoryStorage({
-    destination: function (req, files, callback) {
+    destination (req, files, callback) {
         callback(null, "");
-    },
+    }
 });
-var multipleUpload = multer({ storage: storage }).array("file");
+const multipleUpload = multer({ storage }).array("file");
 const BUCKET_NAME = "versabucket";
 const accessKeyId = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
 
@@ -24,15 +24,15 @@ router.put("/update", auth, async (req, res) => {
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
-        let checkOwner = await pool.query(
-            "SELECT host from events WHERE id = " + eventID
+        const checkOwner = await pool.query(
+            `SELECT host from events WHERE id = ${  eventID}`
         );
         if (checkOwner.rows[0].host !== req.user.id) {
             res.status(500).send("Not Authorized");
         }
         try {
-            //make a query to insert the image info into the db
-            let query = `UPDATE event_images SET label = '${label}', img_size = '${imageSize}' WHERE event_id = ${eventID} AND filename = '${filename}';`;
+            // make a query to insert the image info into the db
+            const query = `UPDATE event_images SET label = '${label}', img_size = '${imageSize}' WHERE event_id = ${eventID} AND filename = '${filename}';`;
             pool.query(query);
             if (imageSize === "thumb") {
                 const thumbnail = await pool.query(
@@ -49,36 +49,36 @@ router.put("/update", auth, async (req, res) => {
     }
 });
 
-router.post("/add", multipleUpload, auth, async function (req, res) {
+router.post("/add", multipleUpload, auth, async (req, res) => {
     const filename = uuid();
     const file = req.files;
     const { label, imageSize, eventID } = req.body;
-    let s3bucket = new AWS.S3({
-        accessKeyId: accessKeyId,
+    const s3bucket = new AWS.S3({
+        accessKeyId,
         secretAccessKey: secretKey,
         bucketName: BUCKET_NAME,
-        dirName: "images",
+        dirName: "images"
     });
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
-        let checkOwner = await pool.query(
-            "SELECT host from events WHERE id = " + eventID
+        const checkOwner = await pool.query(
+            `SELECT host from events WHERE id = ${  eventID}`
         );
         if (checkOwner.rows[0].host !== req.user.id) {
             res.status(500).send("Not Authorized");
         }
-        s3bucket.createBucket(function () {
-            var ResponseData = [];
+        s3bucket.createBucket(() => {
+            const ResponseData = [];
 
             file.map((item) => {
-                var params = {
-                    Bucket: BUCKET_NAME + "/eventImages",
-                    Key: filename + ".jpeg",
+                const params = {
+                    Bucket: `${BUCKET_NAME  }/eventImages`,
+                    Key: `${filename  }.jpeg`,
                     Body: item.buffer,
-                    ACL: "public-read",
+                    ACL: "public-read"
                 };
-                s3bucket.upload(params, function (err, data) {
+                s3bucket.upload(params, (err, data) => {
                     if (err) {
                         res.status(400).json({ error: true, Message: err });
                     } else {
@@ -87,7 +87,7 @@ router.post("/add", multipleUpload, auth, async function (req, res) {
                             res.status(201).json({
                                 error: false,
                                 Message: "File Uploaded Successfully",
-                                Data: ResponseData,
+                                Data: ResponseData
                             });
                         }
                     }
@@ -95,7 +95,7 @@ router.post("/add", multipleUpload, auth, async function (req, res) {
             });
         });
         try {
-            //make a query to insert the image info into the db
+            // make a query to insert the image info into the db
             const response = await pool.query(
                 "INSERT INTO event_images (filename, label, img_size, event_id) VALUES ($1, $2, $3,$4) RETURNING *",
                 [filename, label, imageSize, eventID]
@@ -107,19 +107,19 @@ router.post("/add", multipleUpload, auth, async function (req, res) {
                 WHERE id = ${eventID};`
                 );
             }
-            //res.sendStatus(201);
+            // res.sendStatus(201);
         } catch (e) {
             console.log(e);
-            //res.sendStatus(400);
+            // res.sendStatus(400);
         }
     }
 });
 
 router.get("/byEID/:id", async (req, res) => {
     try {
-        //make a query to insert the image info into the db
-        let result = await pool.query(
-            "SELECT * from EVENT_IMAGES WHERE event_id =" + req.params.id
+        // make a query to insert the image info into the db
+        const result = await pool.query(
+            `SELECT * from EVENT_IMAGES WHERE event_id =${  req.params.id}`
         );
         res.send(result.rows);
     } catch (e) {
@@ -128,16 +128,16 @@ router.get("/byEID/:id", async (req, res) => {
     }
 });
 
-//delete image
+// delete image
 
 router.delete("/delete/:id", auth, async (req, res) => {
-    const id = req.params.id;
+    const {id} = req.params;
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
-        let checkOwner = await pool.query(
-            "SELECT e.host from events e INNER JOIN event_images i ON i.event_id = e.id WHERE i.id = " +
-                id
+        const checkOwner = await pool.query(
+            `SELECT e.host from events e INNER JOIN event_images i ON i.event_id = e.id WHERE i.id = ${ 
+                id}`
         );
         if (checkOwner.rows[0].host !== req.user.id) {
             res.status(500).send("Not Authorized");
@@ -151,7 +151,7 @@ router.delete("/delete/:id", auth, async (req, res) => {
         } catch (err) {
             console.error(err.message);
             res.send({
-                message: "error",
+                message: "error"
             });
         }
     }

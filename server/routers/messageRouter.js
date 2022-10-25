@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const pool = require("../db");
+
 router.post("/read", async (req, res) => {
     const { topic, to } = req.body;
     pool.query(
@@ -18,8 +19,8 @@ router.get("/get", async (req, res) => {
             WHERE from_user=${req.user.id} OR to_user=${req.user.id}`);
         const results = result.rows;
         for (message of results) {
-            message.to_name = message.to_name.split(' ')[0]
-            message.from_name = message.from_name.split(' ')[0]
+            message.to_name = message.to_name.split(" ")[0]
+            message.from_name = message.from_name.split(" ")[0]
         }
         res.json(results);
     } catch (e) {
@@ -46,9 +47,9 @@ router.post("/send", async (req, res) => {
     }
 });
 
-//search messages by keyword found in title or user
+// search messages by keyword found in title or user
 router.get("/searchMessages/:searchQuery", async (req, res) => {
-    let query = req.params.searchQuery.toUpperCase().split("&");
+    const query = req.params.searchQuery.toUpperCase().split("&");
     let queryString = "";
     query.forEach((term, index) => {
         if (index == 0) {

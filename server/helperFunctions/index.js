@@ -9,8 +9,8 @@ const generateAuthToken = (user) => {
 };
 
 const findByCredentials = async (email, password) => {
-    const user = await pool.query(`SELECT * FROM users WHERE email = ($1)`, [
-        email,
+    const user = await pool.query("SELECT * FROM users WHERE email = ($1)", [
+        email
     ]);
     if (user.rows.length === 0) {
         throw new Error("No account with this email");
@@ -25,5 +25,5 @@ const findByCredentials = async (email, password) => {
 
 module.exports = {
     generateAuthToken,
-    findByCredentials,
+    findByCredentials
 };

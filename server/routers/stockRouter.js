@@ -1,8 +1,9 @@
 const express = require("express");
+
 const router = new express.Router();
 const pool = require("../db");
 const auth = require("../middleware/auth");
-//get all variations of specific product in stock db
+// get all variations of specific product in stock db
 router.get("/getByVariation/:id/:colour/:size", async (req, res) => {
     const { id, colour, size } = req.params;
     const result = await pool.query(
@@ -23,7 +24,7 @@ router.get("/get/:id", async (req, res, next) => {
     res.json(result.rows);
 });
 
-//Get all variations from all products in stock db
+// Get all variations from all products in stock db
 router.get("/getAll", async (req, res, next) => {
     const client = await pool.connect();
     const result = await pool.query("SELECT * FROM stock");
@@ -31,15 +32,15 @@ router.get("/getAll", async (req, res, next) => {
     res.json(result.rows);
 });
 
-//edit stock
+// edit stock
 
 router.put("/update", auth, async (req, res, next) => {
     if (!req.user.is_artist) {
         res.status(500).send("Not Authorized");
     } else {
         const { id } = req.body;
-        let checkOwner = await pool.query(
-            "SELECT artist_id from products WHERE id = " + id
+        const checkOwner = await pool.query(
+            `SELECT artist_id from products WHERE id = ${  id}`
         );
         if (checkOwner.rows[0].artist_id !== req.user.id) {
             res.status(500).send("Not Authorized");
@@ -55,7 +56,7 @@ router.put("/update", auth, async (req, res, next) => {
             for (const obj of req.body.quant) {
                 const { color, size, quantity } = obj;
                 await client.query(
-                    `INSERT INTO stock (product_id, color, size, quantity) VALUES ($1, $2, $3, $4)`,
+                    "INSERT INTO stock (product_id, color, size, quantity) VALUES ($1, $2, $3, $4)",
                     [id, color, size, quantity]
                 );
             }
@@ -73,8 +74,8 @@ router.post("/post", auth, async (req, res, next) => {
         res.status(500).send("Not Authorized");
     } else {
         const { id } = req.body;
-        let checkOwner = await pool.query(
-            "SELECT artist_id from products WHERE id = " + id
+        const checkOwner = await pool.query(
+            `SELECT artist_id from products WHERE id = ${  id}`
         );
         if (checkOwner.rows[0].artist_id !== req.user.id) {
             res.status(500).send("Not Authorized");
@@ -85,7 +86,7 @@ router.post("/post", auth, async (req, res, next) => {
             for (const obj of req.body.quant) {
                 const { color, size, quantity } = obj;
                 await client.query(
-                    `INSERT INTO stock (product_id, color, size, quantity) VALUES ($1, $2, $3, $4)`,
+                    "INSERT INTO stock (product_id, color, size, quantity) VALUES ($1, $2, $3, $4)",
                     [id, color, size, quantity]
                 );
             }

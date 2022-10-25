@@ -1,16 +1,18 @@
-let express = require("express");
-let cors = require("cors");
+const express = require("express");
+const cors = require("cors");
 const crypto = require("crypto");
 const path = require("path");
+
 const PORT = process.env.PORT || 5000;
-const apiRouter = require('./routers/apiRouter')
-var cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser");
+const apiRouter = require("./routers/apiRouter")
 const {
     emailsSent,
-    sendReminder,
+    sendReminder
 } = require("./helperFunctions/sendGridFunctions");
 const pool = require("./db");
-let app = express();
+
+const app = express();
 app.use(cookieParser());
 app.use(express.json());
 // app.use(cors({ credentials: true }));
@@ -23,14 +25,14 @@ app.listen(PORT, () => {
 
 app.use(express.static("../frontend/versa/build"));
 
-//ROUTES
+// ROUTES
 
 app.use("*", async (req, res, next) => {
-    let sent = await emailsSent(
+    const sent = await emailsSent(
         new Date().toLocaleDateString("en-US", {
             year: "numeric",
             month: "numeric",
-            day: "numeric",
+            day: "numeric"
         })
     );
 
@@ -40,7 +42,7 @@ app.use("*", async (req, res, next) => {
     next();
 });
 
-app.use('/api', apiRouter)
+app.use("/api", apiRouter)
 
 app.get("*", (req, res) => {
     res.sendFile(
