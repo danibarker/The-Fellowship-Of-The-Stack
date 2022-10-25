@@ -24,7 +24,7 @@ import {
 import setVisible from "../../redux/actions/Modals";
 import mapColors from "./maps/mapColors";
 import mapSizes from "./maps/mapSizes";
-import mapImages from "./maps/mapImages";
+import { mapImages } from "./maps/mapImages";
 import loadPage from "./functions/loadPage";
 import ImageInput from "./ImageInput";
 import ColourModal from "./ColourModal";
