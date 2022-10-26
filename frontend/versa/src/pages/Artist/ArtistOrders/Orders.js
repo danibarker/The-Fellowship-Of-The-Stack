@@ -8,55 +8,55 @@ import PageContainer from "../../../components/Redesign/Reusable/PageContainer";
 import Header from "../../../components/Redesign/Reusable/Header";
 
 const Orders = () => {
-    const [orderData, setOrderData] = useState();
-    let params = useParams();
-    const currentUser = params.id;
-    // const [buyerDetails, setBuyerDetails] = useState();
+  const [orderData, setOrderData] = useState();
+  const params = useParams();
+  const currentUser = params.id;
+  // const [buyerDetails, setBuyerDetails] = useState();
 
-    useEffect(() => {
-        const fetchData = async (currentUser) => {
-            const data = await getRecentOrders(currentUser);
+  useEffect(() => {
+    const fetchData = async (currentUser) => {
+      const data = await getRecentOrders(currentUser);
 
-            setOrderData(data);
-        };
-        window.scrollTo({
-            top: 0,
-            left: 0,
-        });
-        fetchData();
-    }, []);
+      setOrderData(data);
+    };
+    window.scrollTo({
+      top: 0,
+      left: 0
+    });
+    fetchData();
+  }, []);
 
-    return (
-        <PageContainer>
-            <Header
-                title="Recent Orders"
-                sub="View orders from customers and update order status."
-            />
-            <OrderContainer>
-                {!orderData ? (
-                    <Loading />
-                ) : (
-                    <OrdersTable orderData={orderData} user={currentUser} />
-                )}
-            </OrderContainer>
-        </PageContainer>
-    );
+  return (
+    <PageContainer>
+      <Header
+        title="Recent Orders"
+        sub="View orders from customers and update order status."
+      />
+      <OrderContainer>
+        {!orderData ? (
+          <Loading />
+        ) : (
+          <OrdersTable orderData={orderData} user={currentUser} />
+        )}
+      </OrderContainer>
+    </PageContainer>
+  );
 };
 
 export default Orders;
 
 const OrderContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    h1 {
-        /* margin: 0 0 0 1.3em; */
+  h1 {
+    /* margin: 0 0 0 1.3em; */
 
-        justify-self: start;
-    }
+    justify-self: start;
+  }
 
-    :last-child {
-        place-self: start;
-        align-self: center;
-    }
+  :last-child {
+    place-self: start;
+    align-self: center;
+  }
 `;

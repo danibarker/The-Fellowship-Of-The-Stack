@@ -53,9 +53,7 @@ const ReadyDeliveriesTable = ({ orderData }) => {
   const headers = ["Customer Name", "Shipping Address", "Actions"];
 
   const uniqueArtist = Array.from(new Set(filteredData.map((a) => a.id))).map(
-    (name) => {
-      return filteredData.find((a) => a.id === name);
-    }
+    (name) => filteredData.find((a) => a.id === name)
   );
   return (
     <TableContainer>
@@ -72,11 +70,9 @@ const ReadyDeliveriesTable = ({ orderData }) => {
               onChange={(e) => setSortType(e.target.value)}
             >
               {sortOptions.map((option) => (
-                <>
-                  <option value={option.value} key={option.value}>
+                <option value={option.value} key={option.value}>
                     {option.label}
                   </option>
-                </>
               ))}
             </SortChoice>
             <h2>Filter: </h2>
@@ -85,7 +81,7 @@ const ReadyDeliveriesTable = ({ orderData }) => {
               placeholder="Search..."
               onChange={handleChange}
               value={query || ""}
-            ></input>
+             />
           </Sort>
           <Table>
             <thead>
@@ -130,7 +126,7 @@ const ReadyDeliveriesTable = ({ orderData }) => {
                           }}
                         >
                           <a
-                            rel={"noreferrer"}
+                            rel="noreferrer"
                             target="_blank"
                             href={`https://www.google.com/maps?saddr&daddr=${order.shipping_address}`}
                           >

@@ -14,13 +14,14 @@ import {
 } from "./data";
 import { getMyArtistEvents } from "../../../axios/gets";
 import PageContainer from "../../../components/Redesign/Reusable/PageContainer";
+
 const cookies = new Cookies();
 const DashboardMain = () => {
   const [eventsData, setEventsData] = useState();
 
   useEffect(() => {
     const fetchData = async (currentUser) => {
-      let data = await getMyArtistEvents();
+      const data = await getMyArtistEvents();
       setEventsData(data);
     };
     fetchData();
@@ -63,7 +64,7 @@ const DashboardMain = () => {
           totalLabel="orders"
           title="Orders"
           link="/dashboard/artist/total-orders"
-        ></Orders>
+         />
         <RecentOrders
           buttonText="View"
           dataTitle="5 most recent"
@@ -72,16 +73,16 @@ const DashboardMain = () => {
           totalLabel="Unfulfilled"
           title="Recent Orders"
           link="/dashboard/artist/recent-orders"
-        ></RecentOrders>
+         />
         <SalesPerOrder
           buttonText="Reports"
           dataTitle="Average per week"
           total="$107.23"
           totalLabel="Average"
           graphData={avgOrderData}
-          title={`Sales Per Order`}
+          title="Sales Per Order"
           link="/dashboard/artist/average-order-value"
-        ></SalesPerOrder>
+         />
         <Inventory
           buttonText="View"
           dataTitle="5 lowest in stock"
@@ -90,7 +91,7 @@ const DashboardMain = () => {
           tableData={productData}
           title="Inventory"
           link="/dashboard/artist/inventory"
-        ></Inventory>
+         />
         <SalesByProduct
           buttonText="Reports"
           dataTitle="Top 5 products"
@@ -109,7 +110,7 @@ const DashboardMain = () => {
           title="Monthly Sales"
           graphData={salesData}
           link="/dashboard/artist/total-sales"
-        ></MonthlySales>
+         />
         <DashCard
           buttonText="Manage"
           dataTitle="Hosted Events"
@@ -118,7 +119,7 @@ const DashboardMain = () => {
           title="Events"
           tableData={eventsTableData}
           link="/dashboard/artist/manage-events"
-        ></DashCard>
+         />
       </StoreDash>
     </PageContainer>
   );

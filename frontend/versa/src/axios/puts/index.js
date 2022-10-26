@@ -81,7 +81,7 @@ export const editProduct = async (productInfo, images, id, thumbImg) => {
 };
 export const updateInventoryStatus = async (result, status) => {
   result.status = status;
-  await Axios.put("/api/products/edit/" + result.id, {
+  await Axios.put(`/api/products/edit/${  result.id}`, {
     headers: {
       "Access-Control-Allow-Origin": "*"
     },

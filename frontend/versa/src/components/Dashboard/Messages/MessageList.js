@@ -5,6 +5,7 @@ import { readMessage } from "../../../axios/posts";
 import { Circle } from "../../../images/icons";
 import theme from "../../Reusable/Colors";
 import Input from "../../Redesign/Reusable/Input";
+
 const timeSince = (time) => {
   const diff = (new Date() - new Date(time)) / 1000;
   switch (true) {
@@ -132,8 +133,7 @@ const MessageList = ({ selectedThread, setSelectedThread, messages }) => {
           />
         </Search>
         <Threads>
-          {filteredList.map((thread) => {
-            return (
+          {filteredList.map((thread) => (
               <Thread
                 selected={selectedThread === thread}
                 onClick={() => {
@@ -171,8 +171,7 @@ const MessageList = ({ selectedThread, setSelectedThread, messages }) => {
                   </p>
                 </ThreadInfo>
               </Thread>
-            );
-          })}
+            ))}
         </Threads>
       </MessageGrid>
     </>

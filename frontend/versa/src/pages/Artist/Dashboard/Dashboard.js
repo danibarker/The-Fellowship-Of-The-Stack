@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { useState } from "react";
 // import Cookies from "universal-cookie";
+import Cookies from "universal-cookie";
 import DashboardMain from "./DashboardMain";
 import ShopperDashboardMain from "../../UserBuyer/Dashboard/DashboardMain";
 import Messages from "../../Messages";
@@ -21,7 +22,6 @@ import EditEvent from "../EditEvent";
 import CreateEvent from "../CreateEvent";
 // import OrderItems from "./OrderItems";
 import OrderItems from "../ArtistOrders/OrderItems";
-import Cookies from "universal-cookie";
 import DashboardHome from "../../Driver/Dashboard/DashboardHome";
 import PrivateRoute from "../../../components/Reusable/PrivateRoute";
 // import DriverMap from "../../../components/Dashboard/DriverMap";
@@ -41,18 +41,17 @@ import SideMenu from "../../../components/SideMenu";
 import Artist from "../../Dashboard/Artist";
 import Shopper from "../../Dashboard/Shopper";
 import Driver from "../../Dashboard/Driver";
+
 const cookies = new Cookies();
 const Redirecter = () => {
   window.location = "/account";
 };
-const DashboardLanding = () => {
-  return (
+const DashboardLanding = () => (
     <h1>
       Here we can give information about the dashboard and have useful links for
       all user types
     </h1>
   );
-};
 const Dashboard = () => {
   const [navWidth, setNavWidth] = useState(0);
   // const params = useParams();

@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Contact = () => {
-  return (
+const Contact = () => (
     <Container>
       <h1>Contact Us</h1>
       <p>For any inquiries, please contact us at versayyc@gmail.com</p>
       <p>Please include any helpful details, eg. Wh</p>
     </Container>
   );
-};
 
 export default Contact;
 

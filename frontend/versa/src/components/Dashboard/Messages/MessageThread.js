@@ -28,8 +28,7 @@ const MessageThread = ({ thread }) => {
       </Header>
       <MessageDiv>
         <Scrollable>
-          {messageList.messages.map((message) => {
-            return message.from_user === userID ? (
+          {messageList.messages.map((message) => message.from_user === userID ? (
               <MessageHolder>
                 <Circle stroke="none" />
                 <ToMessage>
@@ -54,8 +53,7 @@ const MessageThread = ({ thread }) => {
                   </Time>
                 </FromMessage>
               </MessageHolderFrom>
-            );
-          })}
+            ))}
         </Scrollable>
       </MessageDiv>
       <Send>
@@ -68,7 +66,7 @@ const MessageThread = ({ thread }) => {
         <SendButton
           tertiary
           onClick={() => {
-            let newList = {
+            const newList = {
               ...messageList,
               messages: [
                 ...messageList.messages,
@@ -96,7 +94,7 @@ const MessageThread = ({ thread }) => {
       </Send>
     </ThreadDiv>
   ) : (
-    <ThreadDiv></ThreadDiv>
+    <ThreadDiv />
   );
 };
 export default MessageThread;
@@ -109,7 +107,7 @@ const MessageHolder = styled.div`
     height: 18px;
     width: 18px;
     path {
-      fill: ${(props) => props.theme.black + "10"};
+      fill: ${(props) => `${props.theme.black  }10`};
     }
   }
   flex-direction: row-reverse;
@@ -221,7 +219,7 @@ const ToMessage = styled.div`
     color: ${(props) => props.theme.black};
     margin-bottom: 0px;
   }
-  background-color: ${(props) => props.theme.black + "10"};
+  background-color: ${(props) => `${props.theme.black  }10`};
   align-self: flex-end;
   width: 70%;
 `;

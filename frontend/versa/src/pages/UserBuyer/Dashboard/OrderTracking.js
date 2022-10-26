@@ -18,12 +18,10 @@ const OrderTracking = () => {
       const data = await getCustomerOrders();
 
       setOrderData(
-        data.map((order) => {
-          return {
+        data.map((order) => ({
             ...order,
             status: order.status === "Unfulfilled" ? "Paid" : order.status
-          };
-        })
+          }))
       );
     };
     window.scrollTo({

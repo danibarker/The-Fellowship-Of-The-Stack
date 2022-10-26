@@ -53,7 +53,7 @@ const AssignedPickupDetails = () => {
             </Address>
             <Button secondarySmall>
               <a
-                rel={"noreferrer"}
+                rel="noreferrer"
                 target="_blank"
                 href={`https://www.google.com/maps?saddr&daddr=${artistDetails.address}`}
               >
@@ -82,14 +82,12 @@ const AssignedPickupDetails = () => {
             </RowContainer>
 
             <OrderItemContainer>
-              {orderData.map((order) => {
-                return (
+              {orderData.map((order) => (
                   <ProductPickup
                     order={order}
                     key={order.single_id + order.title + order.size}
                   />
-                );
-              })}
+                ))}
             </OrderItemContainer>
           </BuyerContainer>
         </>

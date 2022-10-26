@@ -2,37 +2,35 @@ import styled from "styled-components";
 
 import React from "react";
 
-const Table = ({ headers, data }) => {
-    return (
-        <ActualTable>
-            <thead>
-                <Headers>
-                    {data.table.headers.map((header, index) => (
-                        <th key={header + index}>
-                            <h2>{header}</h2>
-                        </th>
-                    ))}
-                </Headers>
-            </thead>
-            <tbody>
-                {data.table.values.map((row, index) => (
-                    <BodyRows key={`data${index}`}>
-                        {row.map((data, index) => (
-                            <td key={index}>
-                                <p>{data}</p>
-                            </td>
-                        ))}
-                    </BodyRows>
-                ))}
-                {data.length === 0 && (
-                    <BodyRows key="no row">
-                        <td key="No results">No Deliveries Found.</td>
-                    </BodyRows>
-                )}
-            </tbody>
-        </ActualTable>
-    );
-};
+const Table = ({ headers, data }) => (
+    <ActualTable>
+      <thead>
+        <Headers>
+          {data.table.headers.map((header, index) => (
+            <th key={header + index}>
+              <h2>{header}</h2>
+            </th>
+          ))}
+        </Headers>
+      </thead>
+      <tbody>
+        {data.table.values.map((row, index) => (
+          <BodyRows key={`data${index}`}>
+            {row.map((data, index) => (
+              <td key={index}>
+                <p>{data}</p>
+              </td>
+            ))}
+          </BodyRows>
+        ))}
+        {data.length === 0 && (
+          <BodyRows key="no row">
+            <td key="No results">No Deliveries Found.</td>
+          </BodyRows>
+        )}
+      </tbody>
+    </ActualTable>
+  );
 
 export default Table;
 
@@ -85,33 +83,33 @@ const ActualTable = styled.table`
     }
 `;
 const Headers = styled.tr`
-    h2 {
-        color: ${(props) => props.theme.black};
-        text-align: left;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-size: 0.8em;
-        /* letter-spacing: 0.03em; */
-    }
+  h2 {
+    color: ${(props) => props.theme.black};
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    /* letter-spacing: 0.03em; */
+  }
 `;
 const BodyRows = styled.tr`
-    border-bottom: thin solid ${(props) => props.theme.lightPurple + 60};
-    transition: all 0.2s ease;
-    p {
-        color: ${(props) => props.theme.black};
-        margin-bottom: 0;
-    }
+  border-bottom: thin solid ${(props) => props.theme.lightPurple + 60};
+  transition: all 0.2s ease;
+  p {
+    color: ${(props) => props.theme.black};
+    margin-bottom: 0;
+  }
+  :hover {
+    background-color: ${(props) => props.theme.blueHover};
+  }
+  :nth-of-type(even) {
+    background-color: ${(props) => props.theme.blue};
     :hover {
-        background-color: ${(props) => props.theme.blueHover};
+      background-color: ${(props) => props.theme.blueHover};
     }
-    :nth-of-type(even) {
-        background-color: ${(props) => props.theme.blue};
-        :hover {
-            background-color: ${(props) => props.theme.blueHover};
-        }
-    }
+  }
 
-    :last-of-type {
-        border-bottom: 2px solid ${(props) => props.theme.lightPurple};
-    }
+  :last-of-type {
+    border-bottom: 2px solid ${(props) => props.theme.lightPurple};
+  }
 `;

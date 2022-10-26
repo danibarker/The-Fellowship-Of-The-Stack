@@ -5,119 +5,116 @@ import PageContainer from "../../components/Redesign/Reusable/PageContainer";
 import Header from "../../components/Redesign/Reusable/Header";
 import Loading from "../../components/Redesign/Reusable/Loading";
 
-
 const Shop = () => {
-    
-    let featuredArtistID = 44;
-    const [products, setProducts] = useState();
-    const [notFeatured, setNotFeatured] = useState();
-    const [featured, setFeatured] = useState();
-    const [query, setQuery] = useState();
-    const calcTotalStock = (product1) => {
-        return product1.stock.reduce((total, curr) => {
-            total += curr.quantity;
-            return total;
-        }, 0);
-    };
+  const featuredArtistID = 44;
+  const [products, setProducts] = useState();
+  const [notFeatured, setNotFeatured] = useState();
+  const [featured, setFeatured] = useState();
+  const [query, setQuery] = useState();
+  const calcTotalStock = (product1) => product1.stock.reduce((total, curr) => {
+      total += curr.quantity;
+      return total;
+    }, 0);
 
-    useEffect(() => {
-        const getProducts = async () => {
-            let data = await getAllProducts();
-            data = data.sort((product1, product2) => {
-                if (calcTotalStock(product1) === 0) {
-                    return 1;
-                }
-                return -1;
-            });
-
-            setProducts(data);
-        };
-        window.scrollTo({
-            top: 0,
-            left: 0,
-        });
-        getProducts();
-    }, []);
-    const search = async () => {
-        let data = await searchProducts(query);
-        setProducts(data);
-    };
-
-    useEffect(() => {
-        const partition = (array, featuredArtistID) => {
-            let pass = [],
-                fail = [];
-            array.forEach((e) => {
-                if (e.artist_id === featuredArtistID) {
-                    pass.push(e);
-                } else {
-                    fail.push(e);
-                }
-            });
-            return [pass, fail];
-        };
-
-        if (products) {
-            const [featured, notFeatured] = partition(
-                products,
-                featuredArtistID
-            );
-            setFeatured(featured);
-            setNotFeatured(notFeatured);
+  useEffect(() => {
+    const getProducts = async () => {
+      let data = await getAllProducts();
+      data = data.sort((product1, product2) => {
+        if (calcTotalStock(product1) === 0) {
+          return 1;
         }
-    }, [products, featuredArtistID]);
+        return -1;
+      });
 
-    return (
-        <PageContainer>
-            <Header
-                title="Shop"
-                sub="Support your favourite talented artists and buy presents for loved ones."
-                search
-                type="shop"
-                placeholder="Search for products"
-                onClick={() => {
-                    if (query) {
-                        search();
-                    }
-                }}
-                onKeyPress={(e) => {
-                    if (e.key === "Enter") {
-                        search();
-                    }
-                }}
-                onChange={(e) => setQuery(e.target.value.replace(/[.?]/g, ""))}
+      setProducts(data);
+    };
+    window.scrollTo({
+      top: 0,
+      left: 0
+    });
+    getProducts();
+  }, []);
+  const search = async () => {
+    const data = await searchProducts(query);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    const partition = (array, featuredArtistID) => {
+      const pass = [];
+        const fail = [];
+      array.forEach((e) => {
+        if (e.artist_id === featuredArtistID) {
+          pass.push(e);
+        } else {
+          fail.push(e);
+        }
+      });
+      return [pass, fail];
+    };
+
+    if (products) {
+      const [featured, notFeatured] = partition(products, featuredArtistID);
+      setFeatured(featured);
+      setNotFeatured(notFeatured);
+    }
+  }, [products, featuredArtistID]);
+
+  return (
+    <PageContainer>
+      <Header
+        title="Shop"
+        sub="Support your favourite talented artists and buy presents for loved ones."
+        search
+        type="shop"
+        placeholder="Search for products"
+        onClick={() => {
+          if (query) {
+            search();
+          }
+        }}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            search();
+          }
+        }}
+        onChange={(e) => setQuery(e.target.value.replace(/[.?]/g, ""))}
+      />
+      {!featured && !notFeatured ? (
+        <Loading />
+      ) : (
+        <>
+          {featured.length > 0 && (
+            <Box
+              dataToMap={featured}
+              boxTitle={`Artist Spotlight: ${featured[0].artist}`}
+              boxDescription="Shop the creations of this month’s featured local artist."
+              type="shop"
+              featured
+              link="product-item"
+              awsFolder="images"
             />
-            {!featured && !notFeatured ? (
-                <Loading />
-            ) : (
-                <>
-                        {featured.length > 0 && <Box
-                            dataToMap={featured}
-                            boxTitle={`Artist Spotlight: ${featured[0].artist}`}
-                            boxDescription="Shop the creations of this month’s featured local artist."
-                            type="shop"
-                            featured
-                            link="product-item"
-                            awsFolder="images"
-                        />}
-                        {notFeatured.length > 0 &&
-                            <Box
-                                dataToMap={notFeatured}
-                                type="shop"
-                                link="product-item"
-                                awsFolder="images"
-                            />
-                        }
-                        {notFeatured.length === 0 && featured.length === 0 && <Box
-                                dataToMap={[]}
-                                type="shop"
-                                link="product-item"
-                                awsFolder="images"
-                            />}
-                </>
-            )}
-        </PageContainer>
-    );
+          )}
+          {notFeatured.length > 0 && (
+            <Box
+              dataToMap={notFeatured}
+              type="shop"
+              link="product-item"
+              awsFolder="images"
+            />
+          )}
+          {notFeatured.length === 0 && featured.length === 0 && (
+            <Box
+              dataToMap={[]}
+              type="shop"
+              link="product-item"
+              awsFolder="images"
+            />
+          )}
+        </>
+      )}
+    </PageContainer>
+  );
 };
 
 export default Shop;

@@ -16,26 +16,20 @@ const TotalSales = () => {
   const [end, setEnd] = useState(new Date("01-01-2999").toUTCString());
   const [sortBy, setSortBy] = useState("Total Sales");
   const sorters = {
-    Date: (one, two) => {
-      return (
+    Date: (one, two) => (
         new Date(`${one.month}/${one.day}/${one.year}`) -
         new Date(`${two.month}/${two.day}/${two.year}`)
-      );
-    },
-    "Total Sales": (one, two) => {
-      return one.sum - two.sum;
-    }
+      ),
+    "Total Sales": (one, two) => one.sum - two.sum
   };
   useEffect(() => {
     const fetchData = async (query) => {
       const data = await getTotalSales(query);
-      let temp = [];
-      data.map((sales) => {
-        return temp.push({
+      const temp = [];
+      data.map((sales) => temp.push({
           x: sales.day,
           y: parseFloat(sales.sum)
-        });
-      });
+        }));
       setGraphData(temp);
       setSalesData(data);
     };
@@ -43,7 +37,7 @@ const TotalSales = () => {
       top: 0,
       left: 0
     });
-    let query = `${start}&${end}`;
+    const query = `${start}&${end}`;
     fetchData(query);
   }, [start, end]);
 
@@ -57,7 +51,7 @@ const TotalSales = () => {
         <DateRangeSearch
           setDate1={setStart}
           setDate2={setEnd}
-        ></DateRangeSearch>
+         />
       </SearchBarDiv>
 
       {!salesData ? (

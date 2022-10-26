@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const TextArea = ({ setter, getter }) => {
-  return (
+const TextArea = ({ setter, getter }) => (
     <div
       style={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
     >
@@ -14,10 +13,9 @@ const TextArea = ({ setter, getter }) => {
         id="deliveryTextBox"
         name="deliveryInstructions"
         onChange={(e) => setter(e.target.value)}
-      ></TextAreaUnit>
+       />
     </div>
   );
-};
 
 export default TextArea;
 const TextAreaUnit = styled.div`

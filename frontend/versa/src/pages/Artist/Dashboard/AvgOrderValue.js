@@ -23,17 +23,15 @@ const AvgOrderValue = () => {
   useEffect(() => {
     const fetchData = async (query) => {
       const data = await getAvgOrderValue(query);
-      let temp = [];
-      data.map((sales) => {
-        return temp.push({
+      const temp = [];
+      data.map((sales) => temp.push({
           x: sales.day,
           y: parseFloat(sales.average)
-        });
-      });
+        }));
       setGraphData(temp);
       setSalesData(data);
     };
-    let query = `${start}&${end}`;
+    const query = `${start}&${end}`;
     fetchData(query);
   }, [start, end]);
 

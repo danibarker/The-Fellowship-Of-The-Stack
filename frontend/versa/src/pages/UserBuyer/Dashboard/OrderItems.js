@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { getOneShopperOrder } from "../../../axios/gets";
 import UserOrderItemCard from "../../../components/Dashboard/AnalyticsTables/UserOrderItemCard";
 import Loading from "../../../components/Reusable/Loading";
-import theme from "../../../components/Reusable/Colors";
-import StyledLink from "../../../components/Reusable/Link";
-import { LeftIcon } from "../../../images/icons";
+// import theme from "../../../components/Reusable/Colors";
+// import StyledLink from "../../../components/Reusable/Link";
+// import { LeftIcon } from "../../../images/icons";
 import PageContainer from "../../../components/Redesign/Reusable/PageContainer";
 
 const OrderItems = () => {
@@ -59,13 +59,11 @@ const OrderItems = () => {
                 )}
               </OrderInfo>
             </BuyerDetails>
-            {orderData.map((order) => {
-              return (
-                <div>
-                  <UserOrderItemCard order={order} key={order.orderID} />
-                </div>
-              );
-            })}
+            {orderData.map((order) => (
+              <div>
+                <UserOrderItemCard order={order} key={order.orderID} />
+              </div>
+            ))}
           </OrderItemContainer>
         </>
       )}
@@ -75,23 +73,23 @@ const OrderItems = () => {
 
 export default OrderItems;
 
-const Container = styled.div`
-  background: ${theme.background};
-  display: flex;
-  width: 100vw;
-  flex-direction: column;
-  padding: 5em 2em;
-  h1 {
-    margin: 0 1em 2em 0em;
-  }
-`;
+// const Container = styled.div`
+//   background: ${theme.background};
+//   display: flex;
+//   width: 100vw;
+//   flex-direction: column;
+//   padding: 5em 2em;
+//   h1 {
+//     margin: 0 1em 2em 0em;
+//   }
+// `;
 
-const BackToOrder = styled(StyledLink)`
-  margin-left: -0.5em;
-  margin-bottom: 1em;
-  background: none;
-  border-bottom: none;
-`;
+// const BackToOrder = styled(StyledLink)`
+//   margin-left: -0.5em;
+//   margin-bottom: 1em;
+//   background: none;
+//   border-bottom: none;
+// `;
 
 const BuyerDetails = styled.article`
   display: flex;

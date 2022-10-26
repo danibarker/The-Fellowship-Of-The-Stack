@@ -65,8 +65,7 @@ const PastDeliveryDetails = () => {
             </RowContainer>
 
             <OrderItemContainer>
-              {orderData.map((order) => {
-                return (
+              {orderData.map((order) => (
                   <ProductCard key={order.id + order.title + order.size}>
                     <img
                       src={`https://versabucket.s3.us-east-2.amazonaws.com/images/${order.thumbnail}.jpeg`}
@@ -90,8 +89,7 @@ const PastDeliveryDetails = () => {
                       </QuantityStatus>
                     </Details>
                   </ProductCard>
-                );
-              })}
+                ))}
             </OrderItemContainer>
           </ArtistContainer>
         </>

@@ -11,6 +11,7 @@ import { Graph } from "../../../components/Redesign/Reusable/Analytics/Graph";
 import { AnalyticsTable } from "../../../components/Redesign/Reusable/Analytics/AnalyticsTable";
 import TableTopBar from "../../../components/Redesign/Reusable/TableTopBar";
 import TopBar from "../../../components/Redesign/Reusable/TopBar";
+
 const sorters = {
   Date: (one, two) =>
     new Date(`${one.month}/${one.day}/${one.year}`) -
@@ -27,17 +28,15 @@ const TotalOrders = () => {
   useEffect(() => {
     const fetchData = async (query) => {
       const data = await getTotalOrders(query);
-      let temp = [];
-      data.map((sales) => {
-        return temp.push({
+      const temp = [];
+      data.map((sales) => temp.push({
           x: sales.day,
           y: parseFloat(sales.sum)
-        });
-      });
+        }));
       setGraphData(temp);
       setSalesData(data);
     };
-    let query = `${start}&${end}`;
+    const query = `${start}&${end}`;
     fetchData(query);
   }, [start, end]);
 

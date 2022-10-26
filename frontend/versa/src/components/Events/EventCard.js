@@ -76,14 +76,14 @@ const EventCard = ({ theEvent }) => {
           {startDate
             ? startDate === endDate
               ? startDate
-              : startDate + "-" + endDate
+              : `${startDate  }-${  endDate}`
             : "Loading"}
         </EventDate>
-        <Time>{startTime ? startTime + "-" + endTime : "Loading"}</Time>
-        <Stats></Stats>
+        <Time>{startTime ? `${startTime  }-${  endTime}` : "Loading"}</Time>
+        <Stats />
       </Link>
       <Actions>
-        {/**<ActionButton
+        {/** <ActionButton
                     onClick={() => {
                         setInterested((curr) => !curr);
                     }}>

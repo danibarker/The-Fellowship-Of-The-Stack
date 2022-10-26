@@ -3,18 +3,18 @@ import styled from "styled-components";
 import { TableContainer } from "./AnalyticsContainers";
 
 const SBPTable = styled.table`
-    width: 100%;
+  width: 100%;
 
-    /* display: flex;
+  /* display: flex;
     flex-direction: column;
     justify-content: center; */
-    padding-top: 5px;
+  padding-top: 5px;
 
-    padding: 6px;
-    border-collapse: collapse;
-    border-spacing: 0;
+  padding: 6px;
+  border-collapse: collapse;
+  border-spacing: 0;
 
-    /* thead {
+  /* thead {
         border-bottom: 2px solid #9a9a9a;
         td {
             font-weight: 700;
@@ -25,33 +25,37 @@ const SBPTable = styled.table`
             text-decoration: underline;
         }
     } */
-    tr:nth-child(even) {
-        background-color: ${(props) => props.theme.blue};
-    }
-    td {
-        font-weight: 500;
-        padding: 6px;
-        font-size: 18px;
-        padding: 20px 40px;
-        border: none;
-    }
+  tr:nth-child(even) {
+    background-color: ${(props) => props.theme.blue};
+  }
+  td {
+    font-weight: 500;
+    padding: 6px;
+    font-size: 18px;
+    padding: 20px 40px;
+    border: none;
+  }
 `;
-export const AnalyticsTable = ({ sorters, decimal, headers, setSortBy, tableData, sortBy }) => {
-    return (
-        <TableContainer>
-            <SBPTable>
-               
-                <tbody>
-                    {tableData.sort(sorters[sortBy]).map((sales, index) => (
-                        <tr key={sales.sum + index}>
-                            <td>{`${sales.day}/${sales.month}/${sales.year}`}</td>
-                            <td style={{ textAlign: "right" }}>
-                                ${(+sales.sum).toFixed(decimal? 2 : 0)}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </SBPTable>
-        </TableContainer>
-    );
-};
+export const AnalyticsTable = ({
+  sorters,
+  decimal,
+  headers,
+  setSortBy,
+  tableData,
+  sortBy
+}) => (
+    <TableContainer>
+      <SBPTable>
+        <tbody>
+          {tableData.sort(sorters[sortBy]).map((sales, index) => (
+            <tr key={sales.sum + index}>
+              <td>{`${sales.day}/${sales.month}/${sales.year}`}</td>
+              <td style={{ textAlign: "right" }}>
+                ${(+sales.sum).toFixed(decimal ? 2 : 0)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </SBPTable>
+    </TableContainer>
+  );

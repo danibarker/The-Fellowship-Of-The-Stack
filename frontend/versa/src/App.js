@@ -22,6 +22,7 @@ import Shop from "./pages/Shop/Shop";
 import LightTheme from "./components/Redesign/Reusable/Theme";
 import ProductPage from "./pages/Shop/ProductPage";
 import Artist from "./pages/Dashboard/Artist";
+
 if (!window.localStorage.getItem("session")) {
   window.localStorage.setItem(
     "session",
@@ -29,8 +30,7 @@ if (!window.localStorage.getItem("session")) {
   );
 }
 
-function App() {
-  return (
+const App = () => (
     <ThemeProvider theme={LightTheme}>
       <Router>
         <Navbar />
@@ -63,7 +63,6 @@ function App() {
         <Footer />
       </Router>
     </ThemeProvider>
-  );
-}
+  )
 
 export default App;

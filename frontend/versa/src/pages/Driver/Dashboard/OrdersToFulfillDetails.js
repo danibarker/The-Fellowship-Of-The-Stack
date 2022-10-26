@@ -66,7 +66,7 @@ const OrdersToFulFillDetails = () => {
                 </ArtistOrder>
                 <Directions secondarySmall>
                   <a
-                    rel={"noreferrer"}
+                    rel="noreferrer"
                     target="_blank"
                     href={`https://www.google.com/maps?saddr&daddr=${buyerDetails.address}`}
                   >
