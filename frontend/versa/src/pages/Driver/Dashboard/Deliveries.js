@@ -8,42 +8,39 @@ import PageContainer from "../../../components/Redesign/Reusable/PageContainer";
 import Header from "../../../components/Redesign/Reusable/Header";
 
 const Deliveries = () => {
-    const [orderData, setOrderData] = useState();
-    let params = useParams();
-    const currentUser = params.id;
-    const [buyerDetails, setBuyerDetails] = useState();
+  const [orderData, setOrderData] = useState();
+  const params = useParams();
+  const currentUser = params.id;
+  // const [buyerDetails, setBuyerDetails] = useState();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getReadyDeliveries();
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getReadyDeliveries();
 
-            setOrderData(data);
-        };
-        window.scrollTo({
-            top: 0,
-            left: 0,
-        });
-        fetchData();
-    }, []);
+      setOrderData(data);
+    };
+    window.scrollTo({
+      top: 0,
+      left: 0
+    });
+    fetchData();
+  }, []);
 
-    return (
-        <PageContainer>
-            <Header
-                title="Ready to Deliver"
-                sub="These are orders that you have completed pickups for and are ready to deliver. "
-                link="/dashboard/driver"
-                linkText="Dashboard"
-            />
-            {!orderData ? (
-                <Loading />
-            ) : (
-                <ReadyDeliveriesTable
-                    orderData={orderData}
-                    user={currentUser}
-                />
-            )}
-        </PageContainer>
-    );
+  return (
+    <PageContainer>
+      <Header
+        title="Ready to Deliver"
+        sub="These are orders that you have completed pickups for and are ready to deliver. "
+        link="/dashboard/driver"
+        linkText="Dashboard"
+      />
+      {!orderData ? (
+        <Loading />
+      ) : (
+        <ReadyDeliveriesTable orderData={orderData} user={currentUser} />
+      )}
+    </PageContainer>
+  );
 };
 
 export default Deliveries;

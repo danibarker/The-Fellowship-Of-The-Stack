@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { useState } from "react";
+// import Cookies from "universal-cookie";
 import DashboardMain from "./DashboardMain";
 import ShopperDashboardMain from "../../UserBuyer/Dashboard/DashboardMain";
 import Messages from "../../Messages";
@@ -18,7 +15,6 @@ import Notifications from "./Notifications";
 
 import Settings from "./Settings";
 import DashboardEvents from "./DashboardEvents";
-import { useState } from "react";
 import AddProduct from "../AddProduct";
 import EditProduct from "../EditProduct";
 import EditEvent from "../EditEvent";
@@ -27,8 +23,8 @@ import CreateEvent from "../CreateEvent";
 import OrderItems from "../ArtistOrders/OrderItems";
 import Cookies from "universal-cookie";
 import DashboardHome from "../../Driver/Dashboard/DashboardHome";
-import { PrivateRoute } from "../../../components/Reusable/PrivateRoute";
-import DriverMap from "../../../components/Dashboard/DriverMap";
+import PrivateRoute from "../../../components/Reusable/PrivateRoute";
+// import DriverMap from "../../../components/Dashboard/DriverMap";
 import OrdersToDeliver from "../../Driver/Dashboard/OrdersToDeliver";
 import OrdersToFulfillDetails from "../../Driver/Dashboard/OrdersToFulfillDetails";
 import PastDeliveries from "../../Driver/Dashboard/PastDeliveries";
@@ -47,178 +43,155 @@ import Shopper from "../../Dashboard/Shopper";
 import Driver from "../../Dashboard/Driver";
 const cookies = new Cookies();
 const Redirecter = () => {
-    window.location = "/account";
+  window.location = "/account";
 };
 const DashboardLanding = () => {
-    return (
-        <h1>
-            Here we can give information about the dashboard and have useful
-            links for all user types
-        </h1>
-    );
+  return (
+    <h1>
+      Here we can give information about the dashboard and have useful links for
+      all user types
+    </h1>
+  );
 };
 const Dashboard = () => {
-    const [navWidth, setNavWidth] = useState(0);
-    // const params = useParams();
-    // let id = params.id;
-    // let orderid = params.orderid;
-    return (
-        <Router>
-            <Container width={navWidth}>
-                <SideNavDiv>
-                    <SideNav navWidth={navWidth} setNavWidth={setNavWidth} />
-                </SideNavDiv>
-                {/* <SideMenu /> */}
-                <Switch>
-                    <PrivateRoute path="/dashboard" exact component={Artist} />
-                    <PrivateRoute
-                        path="/dashboard/artist"
-                        exact
-                        component={Artist}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/orders"
-                        exact
-                        component={Orders}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/inventory"
-                        exact
-                        component={Inventory}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/analytics"
-                        exact
-                        component={Analytics}
-                    />
+  const [navWidth, setNavWidth] = useState(0);
+  // const params = useParams();
+  // let id = params.id;
+  // let orderid = params.orderid;
+  return (
+    <Router>
+      <Container width={navWidth}>
+        <SideNavDiv>
+          <SideNav navWidth={navWidth} setNavWidth={setNavWidth} />
+        </SideNavDiv>
+        {/* <SideMenu /> */}
+        <Switch>
+          <PrivateRoute path="/dashboard" exact component={Artist} />
+          <PrivateRoute path="/dashboard/artist" exact component={Artist} />
+          <PrivateRoute
+            path="/dashboard/artist/orders"
+            exact
+            component={Orders}
+          />
+          <PrivateRoute
+            path="/dashboard/artist/inventory"
+            exact
+            component={Inventory}
+          />
+          <PrivateRoute
+            path="/dashboard/artist/analytics"
+            exact
+            component={Analytics}
+          />
 
-                    <PrivateRoute
-                        path="/dashboard/driver"
-                        exact
-                        component={Driver}
-                    />
+          <PrivateRoute path="/dashboard/driver" exact component={Driver} />
 
-                    <PrivateRoute
-                        path="/dashboard/artist/categories"
-                        exact
-                        component={Categories}
-                    />
-                    <PrivateRoute
-                        exact
-                        path="/dashboard/artist/recent-orders/"
-                        component={Orders}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/notifications"
-                        exact
-                        component={Notifications}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/messages"
-                        exact
-                        component={Messages}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/settings"
-                        exact
-                        component={Settings}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/manage-events"
-                        exact
-                        component={DashboardEvents}
-                    />
+          <PrivateRoute
+            path="/dashboard/artist/categories"
+            exact
+            component={Categories}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/artist/recent-orders/"
+            component={Orders}
+          />
+          <PrivateRoute
+            path="/dashboard/notifications"
+            exact
+            component={Notifications}
+          />
+          <PrivateRoute path="/dashboard/messages" exact component={Messages} />
+          <PrivateRoute path="/dashboard/settings" exact component={Settings} />
+          <PrivateRoute
+            path="/dashboard/artist/manage-events"
+            exact
+            component={DashboardEvents}
+          />
 
-                    <PrivateRoute
-                        path="/dashboard/artist/products/create"
-                        component={AddProduct}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/products/edit/:id"
-                        component={EditProduct}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/events/create"
-                        component={CreateEvent}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/events/edit/:id"
-                        component={EditEvent}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/artist/recent-orders/:orderid"
-                        component={OrderItems}
-                    />
-                    <PrivateRoute
-                        exact
-                        path="/dashboard/driver/orders"
-                        component={OrdersToDeliver}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/driver/orders/:orderid"
-                        component={OrdersToFulfillDetails}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/driver/delivery-history"
-                        component={PastDeliveries}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/driver/past/:orderid"
-                        component={PastDeliveryDetails}
-                    />
-                    <PrivateRoute
-                        exact
-                        path="/dashboard/driver/assigned-pickups/"
-                        component={AssignedPickups}
-                    />
-                    <PrivateRoute
-                        exact
-                        path="/dashboard/driver/deliveries/"
-                        component={Deliveries}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/driver/assigned-pickups/:artistid"
-                        component={AssignedPickupDetails}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/shopper/events-attending"
-                        component={EventsAttending}
-                    />
-                    <PrivateRoute
-                        exact
-                        path="/dashboard/shopper/order-tracking/"
-                        component={OrderTracking}
-                    />
-                    <PrivateRoute
-                        exact
-                        path="/dashboard/shopper/"
-                        component={Shopper}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/shopper/order-tracking/:orderid"
-                        component={ShopperOrderItems}
-                    />
-                    <PrivateRoute
-                        path="/dashboard/messages"
-                        component={Messages}
-                    />
-                    <PrivateRoute component={NotFound} />
-                </Switch>
-            </Container>
-        </Router>
-    );
+          <PrivateRoute
+            path="/dashboard/artist/products/create"
+            component={AddProduct}
+          />
+          <PrivateRoute
+            path="/dashboard/artist/products/edit/:id"
+            component={EditProduct}
+          />
+          <PrivateRoute
+            path="/dashboard/artist/events/create"
+            component={CreateEvent}
+          />
+          <PrivateRoute
+            path="/dashboard/artist/events/edit/:id"
+            component={EditEvent}
+          />
+          <PrivateRoute
+            path="/dashboard/artist/recent-orders/:orderid"
+            component={OrderItems}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/driver/orders"
+            component={OrdersToDeliver}
+          />
+          <PrivateRoute
+            path="/dashboard/driver/orders/:orderid"
+            component={OrdersToFulfillDetails}
+          />
+          <PrivateRoute
+            path="/dashboard/driver/delivery-history"
+            component={PastDeliveries}
+          />
+          <PrivateRoute
+            path="/dashboard/driver/past/:orderid"
+            component={PastDeliveryDetails}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/driver/assigned-pickups/"
+            component={AssignedPickups}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/driver/deliveries/"
+            component={Deliveries}
+          />
+          <PrivateRoute
+            path="/dashboard/driver/assigned-pickups/:artistid"
+            component={AssignedPickupDetails}
+          />
+          <PrivateRoute
+            path="/dashboard/shopper/events-attending"
+            component={EventsAttending}
+          />
+          <PrivateRoute
+            exact
+            path="/dashboard/shopper/order-tracking/"
+            component={OrderTracking}
+          />
+          <PrivateRoute exact path="/dashboard/shopper/" component={Shopper} />
+          <PrivateRoute
+            path="/dashboard/shopper/order-tracking/:orderid"
+            component={ShopperOrderItems}
+          />
+          <PrivateRoute path="/dashboard/messages" component={Messages} />
+          <PrivateRoute component={NotFound} />
+        </Switch>
+      </Container>
+    </Router>
+  );
 };
 
 export default Dashboard;
 const Container = styled.div`
-    display: flex;
+  display: flex;
 `;
 // const DashboardMainDiv = styled.div`
 //     grid-column: 2;
 // `;
 
 const SideNavDiv = styled.div`
-    grid-column: 1;
-    position: absolute;
-    z-index: 9;
+  grid-column: 1;
+  position: absolute;
+  z-index: 9;
 `;

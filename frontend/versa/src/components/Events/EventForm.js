@@ -1,47 +1,46 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { FieldContainer, Input, Label, TextField } from "../Reusable/Input";
-import Button from "../Reusable/Button";
 import axios from "axios";
 import { Redirect, useParams } from "react-router";
+import { FieldContainer, Input, Label, TextField } from "../Reusable/Input";
+import Button from "../Reusable/Button";
 import { setFormErrors } from "../../redux/actions/Errors";
-import { setFormInputs } from "../../redux/actions/Forms";
-import { setImages } from "../../redux/actions/Images";
+import { setFormInputs, clearFormInputs } from "../../redux/actions/Forms";
+import setImages from "../../redux/actions/Images";
 import { getEventByID, getImagesByEID } from "../../axios/gets";
-import { clearFormInputs } from "../../redux/actions/Forms";
 import {
-    ImageList,
-    ImagesDiv,
-    ImageUpload,
+  ImageList,
+  ImagesDiv,
+  ImageUpload
 } from "../ProductForm/styledComponents";
-import { ImageInput } from "../ProductForm/ImageInput";
+import ImageInput from "../ProductForm/ImageInput";
 import { mapImages, thumbImg } from "./mapImages";
-import { userGoing, createEvent } from "../../axios/posts";
-import { StyledLink } from "../Reusable/Link";
+import { createEvent } from "../../axios/posts";
+import StyledLink from "../Reusable/Link";
 import { LineCloseIcon } from "../../images/icons";
 import theme from "../Reusable/Colors";
 import { editEvent } from "../../axios/puts";
 
 const options = [
-    "Select one:",
-    "Artist showcase",
-    "Meetup",
-    "Exhibition",
-    "Other",
+  "Select one:",
+  "Artist showcase",
+  "Meetup",
+  "Exhibition",
+  "Other"
 ];
 
 const statusOptions = ["Select one:", "Active", "Inactive", "Pending"];
 
 const EventForm = (props) => {
-    const params = useParams();
-    //this is event id
-    const id = params.id;
-    const formError = useSelector((state) => state.formErrors.event.form);
-    const input = useSelector((state) => state.formInputs.event);
-    const images = useSelector((state) => state.images.eventForm);
-    const redirect = useSelector((state) => state.redirect.eventForm);
-    const dispatch = useDispatch();
+  const params = useParams();
+  const { type } = props;
+  const { id } = params;
+  const formError = useSelector((state) => state.formErrors.event.form);
+  const input = useSelector((state) => state.formInputs.event);
+  const images = useSelector((state) => state.images.eventForm);
+  const redirect = useSelector((state) => state.redirect.eventForm);
+  const dispatch = useDispatch();
 
     useEffect(() => {
         const getUserData = async () => {
@@ -122,171 +121,6 @@ const EventForm = (props) => {
             dispatch(setFormErrors("event", "Please check all input is valid"));
         }
     };
-    return redirect ? (
-        <Redirect to={redirect} />
-    ) : (
-        <Form onSubmit={submitData}>
-            <Instruction>Hello, what is the name of your event?</Instruction>
-            <RowContainer>
-                <TextField
-                    multi={false}
-                    tests={[
-                        {
-                            test: (input) => input.length < 1,
-                            error: "Required",
-                        },
-                        {
-                            test: (input) => input.length < 2,
-                            error: "Minimum 2 characters.",
-                        },
-                    ]}
-                    label="Name"
-                    // value={inputName}
-                    form="event"
-                    name="name"></TextField>
-            </RowContainer>
-            <Instruction>What kind of event is it?</Instruction>
-            <RowContainer>
-                <FieldContainer>
-                    <Label>Category</Label>
-                    <select
-                        style={{ height: "35px" }}
-                        value={input.type}
-                        onChange={(e) => {
-                            dispatch(
-                                setFormInputs("event", "type", e.target.value)
-                            );
-                        }}>
-                        {options.map((one) => {
-                            return <option value={one}>{one}</option>;
-                        })}
-                    </select>
-                    <br />
-                </FieldContainer>
-                {input.type === "Other" && (
-                    <TextField
-                        multi={false}
-                        tests={[
-                            {
-                                test: (input) => input.length < 1,
-                                error: "Required",
-                            },
-                            {
-                                test: (input) => input.length < 2,
-                                error: "Minimum 2 characters.",
-                            },
-                        ]}
-                        label="Enter your own"
-                        // value={inputName}
-                        form="event"
-                        name="type"></TextField>
-                )}
-            </RowContainer>
-            <Instruction>What is your event all about?</Instruction>
-            <RowContainer>
-                <TextField
-                    multi={true}
-                    tests={[
-                        {
-                            test: (input) => input.length < 3,
-                            error: "Minimum 2 characters",
-                        },
-                    ]}
-                    label="Description"
-                    form="event"
-                    name="description"></TextField>
-            </RowContainer>
-            <Instruction>Where will your event be located</Instruction>
-            <RowContainer>
-                <TextField
-                    multi={false}
-                    tests={[
-                        {
-                            test: (input) => input.length < 10,
-                            error: "Minimum 10 characters",
-                        },
-                    ]}
-                    label="Location"
-                    form="event"
-                    name="location"></TextField>
-            </RowContainer>
-            <Instruction>
-                How many people can you accomodate at the event? Leave blank for
-                no limit
-            </Instruction>
-            <RowContainer>
-                <TextField
-                    multi={false}
-                    tests={[
-                        {
-                            test: (input) => isNaN(input),
-                            error: "Enter a numerical value",
-                        },
-                    ]}
-                    label="Capacity"
-                    form="event"
-                    name="capacity"></TextField>
-            </RowContainer>
-            <Instruction>
-                Choose the date and time that your event will start and end
-            </Instruction>
-            <RowContainer>
-                <FieldContainer>
-                    <Label>Start Time</Label>
-                    <Input
-                        value={input.startTime}
-                        onChange={(e) => {
-                            dispatch(
-                                setFormInputs(
-                                    "event",
-                                    "startTime",
-                                    e.target.value
-                                )
-                            );
-                        }}
-                        type="datetime-local"
-                    />
-                </FieldContainer>
-                <br />
-                <FieldContainer>
-                    <Label> End Time</Label>
-                    <Input
-                        value={input.endTime}
-                        onChange={(e) => {
-                            dispatch(
-                                setFormInputs(
-                                    "event",
-                                    "endTime",
-                                    e.target.value
-                                )
-                            );
-                        }}
-                        type="datetime-local"
-                    />
-                </FieldContainer>
-            </RowContainer>
-            <Instruction>
-                Add some images of your event to be shown on the event page.
-                <br /> <br /> Choose one image to be the thumbnail to show up in
-                event listings. <br />
-                <br /> Images will be cropped to be 1:1{" "}
-            </Instruction>
-            <RowContainer>
-                <ImagesDiv>
-                    <h2>Images</h2>
-                    <ImageUpload>
-                        {ImageInput(dispatch, images, "eventForm")}
-                    </ImageUpload>
-                    <ImageList>{images && mapImages(images)}</ImageList>
-                </ImagesDiv>
-            </RowContainer>
-            <Instruction>
-                Are you ready to accept registrants or would you just like to
-                see who is interested
-            </Instruction>
-            <RowContainer>
-                <FieldContainer>
-                    <Label>Status</Label>
 
                     <select
                         value={input.status}
@@ -337,42 +171,42 @@ const EventForm = (props) => {
 
 export default EventForm;
 const Form = styled.form`
-    margin-top: 40px;
-    grid-template-columns: 30% 65%;
-    grid-template-rows: auto;
-    display: grid;
-    grid-column-gap: 5%;
-    /* @media only screen and (min-width: 800px) {
+  margin-top: 40px;
+  grid-template-columns: 30% 65%;
+  grid-template-rows: auto;
+  display: grid;
+  grid-column-gap: 5%;
+  /* @media only screen and (min-width: 800px) {
         height: 95%; 
      } */
-    @media (max-width: 600px) {
-        grid-template-columns: 95%;
-    }
+  @media (max-width: 600px) {
+    grid-template-columns: 95%;
+  }
 `;
 const RowContainer = styled.div`
-    padding: 20px 0 20px 0;
-    border-bottom: 2px dashed #ccc;
-    grid-column: 2;
-    @media (max-width: 600px) {
-        grid-column: 1;
-    }
+  padding: 20px 0 20px 0;
+  border-bottom: 2px dashed #ccc;
+  grid-column: 2;
+  @media (max-width: 600px) {
+    grid-column: 1;
+  }
 `;
 
 const Instruction = styled.div`
-    padding: 20px 20px 20px 0;
-    grid-column: 1;
-    border-bottom: 2px dashed #ccc;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 20px 20px 20px 0;
+  grid-column: 1;
+  border-bottom: 2px dashed #ccc;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const Container = styled.div`
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 `;
 
 const Error = styled.p`
-    color: red;
+  color: red;
 `;

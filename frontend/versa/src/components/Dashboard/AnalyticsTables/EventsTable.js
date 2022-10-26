@@ -1,121 +1,112 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import theme from "../../Reusable/Colors";
-import Loading from "../../Reusable/Loading";
 import { Link } from "react-router-dom";
+import Loading from "../../Reusable/Loading";
 import { EditIcon, DeleteIcon } from "../../../images/icons";
 import DropDown from "./EventsDropDown";
-import { DeleteEventModal } from "../DeleteEventModal";
+import DeleteEventModal from "../DeleteEventModal";
 import Button from "../../Reusable/Button";
 
 const EventsTable = ({ eventsData }) => {
-    const [visible, setVisible] = useState(false);
-    const [currentId, setCurrentId] = useState(null);
-    let headers = [
-        // "Event ID",
-        "Event Name",
-        "Start",
-        "End",
-        "Attendees",
-        "Status",
-        "Edit",
-        "Delete",
-    ];
+  const [visible, setVisible] = useState(false);
+  const [currentId, setCurrentId] = useState(null);
+  const headers = [
+    // "Event ID",
+    "Event Name",
+    "Start",
+    "End",
+    "Attendees",
+    "Status",
+    "Edit",
+    "Delete"
+  ];
 
-    const showModal = (id) => {
-        setVisible(!visible);
-        setCurrentId(id);
-    };
+  const showModal = (id) => {
+    setVisible(!visible);
+    setCurrentId(id);
+  };
 
-    return (
-        <TableContainer>
-            {!eventsData ? (
-                <Loading />
-            ) : (
-                <Table>
-                    <thead>
-                        <Headers>
-                            {headers.map((header) => (
-                                <th>
-                                    <h2>{header}</h2>
-                                </th>
-                            ))}
-                        </Headers>
-                    </thead>
+  return (
+    <TableContainer>
+      {!eventsData ? (
+        <Loading />
+      ) : (
+        <Table>
+          <thead>
+            <Headers>
+              {headers.map((header) => (
+                <th>
+                  <h2>{header}</h2>
+                </th>
+              ))}
+            </Headers>
+          </thead>
 
-                    {eventsData &&
-                        eventsData.map((event, index) => (
-                            <BodyRows key={event.title + index}>
-                                <td>
-                                    <p>{event.title}</p>
-                                </td>
-                                <td>
-                                    <p>{event.start_time}</p>
-                                </td>
-                                <td>
-                                    <p>{event.end_time}</p>
-                                </td>
-                                <td>{event.num_attendees}</td>
-                                <td style={{ width: "17%" }}>
-                                    <DropDown
-                                        eventStatus={event.status}
-                                        eventID={event.id}
-                                    />
-                                </td>
+          {eventsData &&
+            eventsData.map((event) => (
+              <BodyRows key={event.id}>
+                <td>
+                  <p>{event.title}</p>
+                </td>
+                <td>
+                  <p>{event.start_time}</p>
+                </td>
+                <td>
+                  <p>{event.end_time}</p>
+                </td>
+                <td>{event.num_attendees}</td>
+                <td style={{ width: "17%" }}>
+                  <DropDown eventStatus={event.status} eventID={event.id} />
+                </td>
 
-                                <td>
-                                    <Link
-                                        to={
-                                            "/dashboard/artist/events/edit/" +
-                                            event.id
-                                        }>
-                                        <p>
-                                            <EditIcon />
-                                        </p>
-                                    </Link>
-                                </td>
-                                <td>
-                                    <DeleteButton
-                                        onClick={() => showModal(event.id)}>
-                                        <DeleteIcon  />
-                                    </DeleteButton>
-                                </td>
-                            </BodyRows>
-                        ))}
-                </Table>
-            )}
-            {visible ? (
-                <DeleteEventModal
-                    value={visible}
-                    setter={setVisible}
-                    id={currentId}
-                    display="flex"
-                />
-            ) : (
-                <DeleteEventModal
-                    value={visible}
-                    setter={setVisible}
-                    id={currentId}
-                    display="none"
-                />
-            )}
-        </TableContainer>
-    );
+                <td>
+                  <Link to={`/dashboard/artist/events/edit/${event.id}`}>
+                    <p>
+                      <EditIcon />
+                    </p>
+                  </Link>
+                </td>
+                <td>
+                  <DeleteButton onClick={() => showModal(event.id)}>
+                    <DeleteIcon />
+                  </DeleteButton>
+                </td>
+              </BodyRows>
+            ))}
+        </Table>
+      )}
+      {visible ? (
+        <DeleteEventModal
+          value={visible}
+          setter={setVisible}
+          id={currentId}
+          display="flex"
+        />
+      ) : (
+        <DeleteEventModal
+          value={visible}
+          setter={setVisible}
+          id={currentId}
+          display="none"
+        />
+      )}
+    </TableContainer>
+  );
 };
 
 export default EventsTable;
 
 const TableContainer = styled.div`
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 40px;
-    svg {
-        path {
-            stroke: ${props=>props.theme.purple};
-        }
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 40px;
+  svg {
+    path {
+      stroke: ${(props) => props.theme.purple};
     }
+  }
 `;
 
 const Table = styled.table`
@@ -145,48 +136,50 @@ const Table = styled.table`
             min-width: 80px;
         }
     }
+  }
 `;
 const Headers = styled.tr`
-    background-color: ${props=>props.theme.purple};
+  background-color: ${(props) => props.theme.purple};
 
-    h2 {
-        color: ${props=>props.theme.blue};
-        text-align: left;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-size: 0.8em;
-        /* letter-spacing: 0.03em; */
-    }
+  h2 {
+    color: ${(props) => props.theme.blue};
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    /* letter-spacing: 0.03em; */
+  }
 `;
 const BodyRows = styled.tr`
     border-bottom: thin solid #dddddd;
     p {
-        color: ${props=>props.theme.black};
+        color: ${(props) => props.theme.black};
         margin-bottom: 0;
     }
     :hover {
-        background-color: ${props=>props.theme.blueHover};
+        background-color: ${(props) => props.theme.blueHover};
     }
     :nth-of-type(even) {
-        background-color: ${props=>props.theme.lightBlue};
+        background-color: ${(props) => props.theme.lightBlue};
         :hover {
-            background-color: ${props=>props.theme.blueHover};
+            background-color: ${(props) => props.theme.blueHover};
         }
     }
     :nth-of-type(odd) {
-        background-color: ${props=>props.theme.blue};
+        background-color: ${(props) => props.theme.blue};
         :hover {
-            background-color: ${props=>props.theme.blueHover};
+            background-color: ${(props) => props.theme.blueHover};
         }
     }
+  }
 
     :last-of-type {
-        border-bottom: 3px solid ${props=>props.theme.lightPurple};
+        border-bottom: 3px solid ${(props) => props.theme.lightPurple};
     }
     
 `;
 
 const DeleteButton = styled(Button)`
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 `;

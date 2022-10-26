@@ -1,4 +1,3 @@
-const auth = require("../middleware/auth");
 const router = require("express").Router();
 const stockRouter = require("./stockRouter");
 const imageRouter = require("./imageRouter");
@@ -10,6 +9,7 @@ const orderRouter = require("./orderRouter");
 const userRouter = require("./userRouter");
 const cartRouter = require("./cartRouter");
 const messageRouter = require("./messageRouter");
+const auth = require("../middleware/auth");
 
 router.use("/stock", stockRouter);
 router.use("/images", imageRouter);

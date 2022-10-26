@@ -24,7 +24,6 @@ import {
 } from "../../../images/icons";
 import theme from "../../../components/Reusable/Colors";
 // import Pill from "../../../components/Reusable/Pill";
-import Cookies from "universal-cookie";
 // import Inventory from "./Inventory";
 
 const cookies = new Cookies();
@@ -32,10 +31,10 @@ const isDriver = cookies.get("isDriver") === "true";
 const isArtist = cookies.get("isArtist") === "true";
 const userTypes = [];
 if (isArtist) {
-    userTypes.push("Artist");
+  userTypes.push("Artist");
 }
 if (isDriver) {
-    userTypes.push("Driver");
+  userTypes.push("Driver");
 }
 
 const white = "#F3F6FF";
@@ -252,8 +251,140 @@ const SideNav = ({ navWidth, setNavWidth }) => {
                     </BodyContainer>
                 </NavBar>
             )}
-        </Container>
-    );
+            <li>
+              <MenuLink onClick={() => setVisibleSDSub((curr) => !curr)}>
+                <Products />
+                <h4>Shopper Dashboard</h4>
+                <DownIcon stroke={theme.primary} />
+              </MenuLink>
+            </li>
+            {visibleSDSub && (
+              <SubMenu>
+                <Link to="/dashboard/shopper/order-tracking/">
+                  <li>
+                    <MenuLink>
+                      <Orders />
+                      {/* <NotiCount>
+                                                <p>3</p>
+                                            </NotiCount> */}
+                      <h3>Orders</h3>
+
+                      <RightIcon stroke={theme.primary} />
+                    </MenuLink>
+                  </li>
+                </Link>
+                <Link to="/dashboard/shopper/">
+                  <li>
+                    <MenuLink>
+                      <HomeIcon />
+                      {/* <NotiCount>
+                                                <p>3</p>
+                                            </NotiCount> */}
+                      <h3>Overview</h3>
+
+                      <RightIcon stroke={theme.primary} />
+                    </MenuLink>
+                  </li>
+                </Link>
+
+                <Link to="/dashboard/shopper/events-attending">
+                  <li>
+                    <MenuLink>
+                      {/* <NotiCount>
+                                                <p>3</p>
+                                            </NotiCount> */}
+                      <EventsIcon />
+                      <h3>Events</h3>
+                      <RightIcon stroke={theme.primary} />
+                    </MenuLink>
+                  </li>
+                </Link>
+              </SubMenu>
+            )}
+            {isDriver && (
+              <>
+                <li>
+                  <MenuLink onClick={() => setVisibleDDSub((curr) => !curr)}>
+                    <CarIcon stroke={theme.tertiary} />
+                    <h4>Driver Dashboard</h4>
+                    <DownIcon stroke={theme.primary} />
+                  </MenuLink>
+                </li>
+                {visibleDDSub && (
+                  <SubMenu>
+                    <Link to="/dashboard/driver">
+                      <li>
+                        <MenuLink>
+                          <AccountIcon />
+
+                          <h3>Overview</h3>
+                          <RightIcon stroke={theme.primary} />
+                        </MenuLink>
+                      </li>
+                    </Link>
+
+                    <li>
+                      <MenuLink onClick={() => setVisiblePSub(!visiblePSub)}>
+                        <Products />
+                        <h3>Orders</h3>
+                        <DownIcon stroke={theme.primary} />
+                      </MenuLink>
+                    </li>
+                    {visiblePSub && (
+                      <SubMenu>
+                        <Link to="/dashboard/driver/orders">
+                          <li>
+                            <SubMenuLink>
+                              <h4>Orders to fulfill</h4>
+                              <RightIcon stroke={theme.primary} />
+                            </SubMenuLink>
+                          </li>
+                        </Link>
+                        <Link to="/dashboard/driver/delivery-history">
+                          <li>
+                            <SubMenuLink>
+                              <h4>Delivery History</h4>
+                              <RightIcon stroke={theme.primary} />
+                            </SubMenuLink>
+                          </li>
+                        </Link>
+                      </SubMenu>
+                    )}
+                    <Link to="/dashboard/driver/assigned-pickups/">
+                      <li>
+                        <MenuLink>
+                          <DriverReceived stroke="#444" />
+                          {/* <NotiCount>
+                                                    <p>3</p>
+                                                </NotiCount> */}
+                          <h3>Pickups</h3>
+
+                          <RightIcon stroke={theme.primary} />
+                        </MenuLink>
+                      </li>
+                    </Link>
+                    <Link to="/dashboard/driver/deliveries/">
+                      <li>
+                        <MenuLink>
+                          <Orders />
+                          {/* <NotiCount>
+                                                    <p>3</p>
+                                                </NotiCount> */}
+                          <h3>Deliveries</h3>
+
+                          <RightIcon stroke={theme.primary} />
+                        </MenuLink>
+                      </li>
+                    </Link>
+                  </SubMenu>
+                )}
+              </>
+            )}
+          </Menu>
+        </NavBar>
+      )}
+    </Container>
+  );
 };
 
 export default SideNav;

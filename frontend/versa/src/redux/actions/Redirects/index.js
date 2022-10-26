@@ -1,8 +1,8 @@
-export const setRedirect = (redirectPage, redirectValue) => {
-    return async (dispatch) => {
-        dispatch({
-            type: "SET_REDIRECT",
-            payload: { redirectPage, redirectValue },
-        });
-    };
+const setRedirect = (redirectPage, redirectValue) => async (dispatch) => {
+  dispatch({
+    type: "SET_REDIRECT",
+    payload: { redirectPage, redirectValue }
+  });
 };
+
+export default setRedirect;

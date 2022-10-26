@@ -5,14 +5,14 @@ import { getOneOrder } from "../../../axios/gets";
 import OrderItemCard from "../../../components/Dashboard/AnalyticsTables/OrderItemCard";
 import Loading from "../../../components/Reusable/Loading";
 import theme from "../../../components/Reusable/Colors";
-import { StyledLink } from "../../../components/Reusable/Link";
+import StyledLink from "../../../components/Reusable/Link";
 import { LeftIcon, SendIcon } from "../../../images/icons";
 import Button from "../../../components/Reusable/Button";
 import { sendMessage } from "../../../axios/posts";
 
 const OrderItems = () => {
-    let params = useParams();
-    let orderID = params.orderid;
+  const params = useParams();
+  const orderID = params.orderid;
 
     const [orderData, setOrderData] = useState();
     const [buyerDetails, setBuyerDetails] = useState();
@@ -27,17 +27,17 @@ const OrderItems = () => {
         fetchData();
     }, [orderID]);
 
-    return (
-        <Container>
-            {!orderData ? (
-                <Loading />
-            ) : (
-                <>
-                    <BackToOrder to="/dashboard/artist/recent-orders/">
-                        <LeftIcon stroke={theme.primary} />
-                        Back to Orders
-                    </BackToOrder>
-                    <h1>Order #{orderID}</h1>
+  return (
+    <Container>
+      {!orderData ? (
+        <Loading />
+      ) : (
+        <>
+          <BackToOrder to="/dashboard/artist/recent-orders/">
+            <LeftIcon stroke={theme.primary} />
+            Back to Orders
+          </BackToOrder>
+          <h1>Order #{orderID}</h1>
 
                     <OrderItemContainer>
                         <BuyerDetails>
@@ -114,8 +114,14 @@ const OrderItems = () => {
                     </OrderItemContainer>
                 </>
             )}
-        </Container>
-    );
+            {orderData.map((order) => (
+              <OrderItemCard order={order} key={order.orderID} />
+            ))}
+          </OrderItemContainer>
+        </>
+      )}
+    </Container>
+  );
 };
 
 export default OrderItems;
@@ -175,78 +181,78 @@ const Message = styled.textarea`
 //     }
 // `;
 const Container = styled.div`
-    background: ${theme.background};
-    display: flex;
-    width: 100vw;
-    flex-direction: column;
-    padding: 2em 2em 2em calc(2em + 66px);
-    h1 {
-        margin: 0 1em 2em 0em;
-    }
+  background: ${theme.background};
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  padding: 2em 2em 2em calc(2em + 66px);
+  h1 {
+    margin: 0 1em 2em 0em;
+  }
 `;
 
 const BackToOrder = styled(StyledLink)`
-    margin-left: -0.5em;
-    margin-bottom: 1em;
-    background: none;
-    border-bottom: none;
+  margin-left: -0.5em;
+  margin-bottom: 1em;
+  background: none;
+  border-bottom: none;
 `;
 
 const BuyerDetails = styled.article`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: #6495ed60;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #6495ed60;
 
-    padding: 2em;
-    box-shadow: 3px 3px 10px rgba(27, 49, 66, 0.13);
-    border-radius: 15px;
-    :hover {
-        box-shadow: 7px 7px 30px rgba(27, 49, 66, 0.13);
-    }
+  padding: 2em;
+  box-shadow: 3px 3px 10px rgba(27, 49, 66, 0.13);
+  border-radius: 15px;
+  :hover {
+    box-shadow: 7px 7px 30px rgba(27, 49, 66, 0.13);
+  }
 `;
 
 const NumItems = styled.div`
-    display: grid;
-    place-items: center;
-    background-color: ${theme.secondary};
-    min-width: 100px;
-    min-height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50%;
-    p {
-        margin: 0;
-    }
-    margin: 0 1em 0 0;
+  display: grid;
+  place-items: center;
+  background-color: ${theme.secondary};
+  min-width: 100px;
+  min-height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50%;
+  p {
+    margin: 0;
+  }
+  margin: 0 1em 0 0;
 `;
 
 const Buyer = styled.div`
-    h2 {
-        margin-bottom: 0.8em;
-        font-weight: 700;
-        letter-spacing: 0.03em;
+  h2 {
+    margin-bottom: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+  h4 {
+    font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+  p {
+    :last-of-type {
+      margin-bottom: 0;
     }
-    h4 {
-        font-weight: 700;
-        margin-bottom: 0.3em;
-    }
-    p {
-        :last-of-type {
-            margin-bottom: 0;
-        }
-    }
+  }
 `;
 
 const OrderItemContainer = styled.div`
-    position: relative;
-    padding: 2em 0;
-    display: grid;
-    grid-row-gap: 30px;
-    grid-column-gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
-    h1 {
-        margin: 0 1em 2em 1em;
-        font-size: 100px;
-    }
+  position: relative;
+  padding: 2em 0;
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+  h1 {
+    margin: 0 1em 2em 1em;
+    font-size: 100px;
+  }
 `;

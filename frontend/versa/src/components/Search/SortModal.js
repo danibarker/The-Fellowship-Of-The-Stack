@@ -1,16 +1,20 @@
-import { Modal } from './styledComponents'
+import { Modal } from "./styledComponents";
 
-const SortModal = () => {
-    return(
-        <Modal>
-            <label>Delivery speed</label><br />
-            <label>Colour</label><br />
-            <label>Item type</label><br />
-            <label>Category</label><br />
-            <label>Price</label><br />
-            <label>Rating</label><br />
-        </Modal>
-    )
-}
+const SortModal = () => (
+  <Modal>
+    <p>Delivery speed</p>
+    <br />
+    <p>Colour</p>
+    <br />
+    <p>Item type</p>
+    <br />
+    <p>Category</p>
+    <br />
+    <p>Price</p>
+    <br />
+    <p>Rating</p>
+    <br />
+  </Modal>
+);
 
-export default SortModal
+export default SortModal;

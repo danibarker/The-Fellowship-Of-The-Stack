@@ -8,34 +8,34 @@ import PastDeliveriesTable from "../../../components/Dashboard/Driver/PastDelive
 import Header from "../../../components/Redesign/Reusable/Header";
 
 const PastDeliveries = () => {
-    const [orderData, setOrderData] = useState();
-    let params = useParams();
-    const currentUser = params.id;
+  const [orderData, setOrderData] = useState();
+  const params = useParams();
+  const currentUser = params.id;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getPastDeliveries();
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getPastDeliveries();
 
-            setOrderData(data);
-        };
-        fetchData();
-    }, []);
+      setOrderData(data);
+    };
+    fetchData();
+  }, []);
 
-    return (
-        <PageContainer>
-            <Header
-                title="Delivery History"
-                sub="These are your past orders. Click on a row in order to see the items you delivered to the customer."
-                link="/dashboard/driver/"
-                linkText="Dashboard"
-            />
-            {!orderData ? (
-                <Loading />
-            ) : (
-                <PastDeliveriesTable orderData={orderData} user={currentUser} />
-            )}
-        </PageContainer>
-    );
+  return (
+    <PageContainer>
+      <Header
+        title="Delivery History"
+        sub="These are your past orders. Click on a row in order to see the items you delivered to the customer."
+        link="/dashboard/driver/"
+        linkText="Dashboard"
+      />
+      {!orderData ? (
+        <Loading />
+      ) : (
+        <PastDeliveriesTable orderData={orderData} user={currentUser} />
+      )}
+    </PageContainer>
+  );
 };
 
 export default PastDeliveries;

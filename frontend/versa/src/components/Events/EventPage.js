@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Button from "../Redesign/Reusable/Button";
 import { Link, useParams, useHistory } from "react-router-dom";
+import Button from "../Reusable/Button";
 import {
-    getCollabsByEventID,
-    getEventByID,
-    getUserByToken,
+  getCollabsByEventID,
+  getEventByID,
+  getUserByToken,
+  amIGoing
 } from "../../axios/gets";
 import { sendMessage, userGoing } from "../../axios/posts";
 // import theme from "../Reusable/Colors";
 import { LeftIcon, Going, NotGoing, SendIcon } from "../../images/icons";
 import { deleteUserFromEventByID } from "../../axios/deletes";
-import { amIGoing } from "../../axios/gets";
 import ImageTest from "../../images/imageTest.png";
 import PageContainer from "../../components/Redesign/Reusable/PageContainer";
 import BackLink from "../../components/Redesign/Reusable/BackLink";
@@ -20,9 +21,9 @@ import Header from "../Redesign/Reusable/Header";
 // import { clearChoices, setChoices } from "../../redux/actions/EventPage";
 
 const EventPage = () => {
-    const [going, setGoing] = useState("false");
-    let params = useParams();
-    const currentEvent = params.id;
+  const [going, setGoing] = useState("false");
+  const params = useParams();
+  const currentEvent = params.id;
 
     const [eventData, setEventData] = useState([]);
     const [dateTime, setDateTime] = useState();
@@ -46,65 +47,35 @@ const EventPage = () => {
         findUser();
     }, []);
 
-    useEffect(() => {
-        const attendStatus = async () => {
-            const response = await amIGoing(currentEvent);
+  const [isUser, setIsUser] = useState();
+  useEffect(() => {
+    const findUser = async () => {
+      const response = await getUserByToken();
+      setIsUser(response);
+    };
+    findUser();
+  }, []);
 
-            if (response) {
-                setGoing(true);
-            } else setGoing(false);
-        };
-        attendStatus();
-    }, [currentEvent]);
+  useEffect(() => {
+    const attendStatus = async () => {
+      const response = await amIGoing(currentEvent);
 
-    useEffect(() => {
-        const fetchEvent = async () => {
-            const data = await getEventByID(currentEvent);
-            console.log(data);
-            setEventData(data);
-            setImage(data.thumbnail);
-            setAttending(data.num_attending);
-            const collaborators = await getCollabsByEventID(currentEvent);
-            setCollabs(collaborators);
-            return data;
-        };
+      if (response) {
+        setGoing(true);
+      } else setGoing(false);
+    };
+    attendStatus();
+  }, [currentEvent]);
 
-        fetchEvent().then((data) => {
-            let options = {
-                weekday: "long",
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-            };
-            let eventDate = new Date(data.start_time);
-            let startTime = eventDate.toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-            });
-
-            let startDate = eventDate.toLocaleDateString("en-US", options);
-
-            let eventEndDate = new Date(data.end_time);
-            let endDate = eventEndDate.toLocaleDateString("en-US", options);
-            let endTime = eventEndDate.toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-            });
-
-            setDateTime({
-                startDate,
-                endDate,
-                startTime,
-                endTime,
-            });
-        });
-    }, [currentEvent]);
-
-    const history = useHistory();
-
-    const routeChange = () => {
-        let path = `/account`;
-        history.push(path);
+  useEffect(() => {
+    const fetchEvent = async () => {
+      const data = await getEventByID(currentEvent);
+      setEventData(data);
+      setImage(data.thumbnail);
+      setAttending(data.num_attending);
+      const collaborators = await getCollabsByEventID(currentEvent);
+      setCollabs(collaborators);
+      return data;
     };
 
     return (
@@ -274,9 +245,9 @@ const Message = styled.textarea`
 `;
 const Send = styled.div``;
 const Question = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 `;
 
 const Row = styled.div`
@@ -333,15 +304,15 @@ const Container = styled.div`
 `;
 
 const EventImages = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px;
-    @media (max-width: 1000px) {
-        flex-wrap: wrap;
-        flex-direction: column;
-        margin: 10px;
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 10px;
+  }
 `;
 
 const MainImage = styled.img`
@@ -352,22 +323,39 @@ const MainImage = styled.img`
 `;
 
 const EventDetail = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 30px 20px;
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0 0 1em 0;
+  }
+  h2 {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0 0 2em 0;
+  }
+
+  h3 {
+    margin: 0 1em 1em 0;
+  }
+  h4 {
+    margin: 0 1em 1em 0;
+    color: ${theme.primary};
+  }
+  p {
+    margin: 0 0 8px 0;
+  }
+  @media (max-width: 1000px) {
     h1 {
-        font-size: 2em;
-        font-weight: 700;
-        margin: 0 0 1em 0;
+      font-size: 1.5em;
     }
     h2 {
-        font-size: 1em;
-        font-weight: 700;
-        margin: 0 0 2em 0;
+      font-size: 1em;
     }
-
     h3 {
         margin: 0 1em 1em 0;
     }
@@ -389,44 +377,45 @@ const EventDetail = styled.div`
             margin: 0 0.5em 0.5em 0;
         }
     }
+  }
 `;
 
 const Description = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    padding: 1em 0;
-    h3 {
-        margin-bottom: 0.8em;
-    }
+  padding: 1em 0;
+  h3 {
+    margin-bottom: 0.8em;
+  }
 `;
 
 const Details = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1em;
-    h3,
-    p {
-        margin-bottom: 0;
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+  h3,
+  p {
+    margin-bottom: 0;
+  }
 
-    p {
-        font-size: 0.9em;
-    }
+  p {
+    font-size: 0.9em;
+  }
 `;
 
 const Collabs = styled(Details)`
-    p {
-        :first-of-type {
-            ::before {
-                content: "";
-            }
-        }
-
-        ::before {
-            content: ", ";
-        }
+  p {
+    :first-of-type {
+      ::before {
+        content: "";
+      }
     }
+
+    ::before {
+      content: ", ";
+    }
+  }
 `;

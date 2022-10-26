@@ -1,8 +1,8 @@
-export const setImages = (page,images) => {
-    return async (dispatch) => {
-        dispatch({
-            type: "SET_IMAGES",
-            payload: { page, images },
-        });
-    };
+const setImages = (page, images) => async (dispatch) => {
+  dispatch({
+    type: "SET_IMAGES",
+    payload: { page, images }
+  });
 };
+
+export default setImages;

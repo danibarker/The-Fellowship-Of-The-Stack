@@ -1,19 +1,17 @@
 import React from "react";
-import TableStyle from "./Inventory";
+import Inventory from "./Inventory";
 
-const CreateStockTable = () => {
-    return (
-        <div>
-            <TableStyle>
-                <tr>
-                    <th>color</th>
-                    <th>price</th>
-                    <th>color</th>
-                    <th>color</th>
-                </tr>
-            </TableStyle>
-        </div>
-    );
-};
+const CreateStockTable = () => (
+  <div>
+    <Inventory>
+      <tr>
+        <th>color</th>
+        <th>price</th>
+        <th>color</th>
+        <th>color</th>
+      </tr>
+    </Inventory>
+  </div>
+);
 
 export default CreateStockTable;

@@ -7,87 +7,78 @@ import Button from "../../Reusable/Button";
 import { deleteUserFromEventByID } from "../../../axios/deletes";
 
 const UserEventsTable = ({ eventsData }) => {
-    const [events, setEvents] = useState(eventsData);
-    let headers = [
-        // "Event ID",
-        "Event Name",
-        "Hosted By",
-        "Location",
-        "Start",
-        "End",
-        "Attendees",
-        "Remove",
-    ];
+  const [events, setEvents] = useState(eventsData);
+  const headers = [
+    // "Event ID",
+    "Event Name",
+    "Hosted By",
+    "Location",
+    "Start",
+    "End",
+    "Attendees",
+    "Remove"
+  ];
 
-    useEffect(() => {
-        setEvents(eventsData);
-    }, [eventsData]);
-    return (
-        <TableContainer>
-            {!events ? (
-                <Loading />
-            ) : (
-                <Table>
-                    <thead>
-                        <Headers>
-                            {headers.map((header) => (
-                                <th>
-                                    <h2>{header}</h2>
-                                </th>
-                            ))}
-                        </Headers>
-                    </thead>
+  useEffect(() => {
+    setEvents(eventsData);
+  }, [eventsData]);
+  return (
+    <TableContainer>
+      {!events ? (
+        <Loading />
+      ) : (
+        <Table>
+          <thead>
+            <Headers>
+              {headers.map((header) => (
+                <th>
+                  <h2>{header}</h2>
+                </th>
+              ))}
+            </Headers>
+          </thead>
 
-                    {events &&
-                        events.map((event, index) => (
-                            <BodyRows key={event.title + index}>
-                                <td data-title="Event Name">
-                                    <p>{event.title}</p>
-                                </td>
-                                <td data-title="Hosted By">
-                                    <p>{event.host_name}</p>
-                                </td>
-                                <td data-title="Location">
-                                    <p>{event.location}</p>
-                                </td>
-                                <td data-title="Start Time">
-                                    <p>
-                                        {new Date(
-                                            event.start_time
-                                        ).toLocaleString()}
-                                    </p>
-                                </td>
-                                <td data-title="End Time">
-                                    <p>
-                                        {new Date(
-                                            event.end_time
-                                        ).toLocaleString()}
-                                    </p>
-                                </td>
-                                <td data-title="Number of Attendees">
-                                    <p>{event.num_attendees}</p>
-                                </td>
+          {events &&
+            events.map((event, index) => (
+              <BodyRows key={event.title + index}>
+                <td data-title="Event Name">
+                  <p>{event.title}</p>
+                </td>
+                <td data-title="Hosted By">
+                  <p>{event.host_name}</p>
+                </td>
+                <td data-title="Location">
+                  <p>{event.location}</p>
+                </td>
+                <td data-title="Start Time">
+                  <p>{new Date(event.start_time).toLocaleString()}</p>
+                </td>
+                <td data-title="End Time">
+                  <p>{new Date(event.end_time).toLocaleString()}</p>
+                </td>
+                <td data-title="Number of Attendees">
+                  <p>{event.num_attendees}</p>
+                </td>
 
-                                <td data-title="Remove">
-                                    <DeleteButton
-                                        onClick={() => {
-                                            let newEvents = eventsData.filter(
-                                                (event, ind) => {
-                                                    return ind !== index;
-                                                }
-                                            );
-                                            setEvents(newEvents);
-                                            deleteUserFromEventByID(event.id);
-                                        }}>
-                                        <DeleteIcon stroke={theme.primary} />
-                                    </DeleteButton>
-                                </td>
-                            </BodyRows>
-                        ))}
-                </Table>
-            )}
-        </TableContainer>
-    );
+                <td data-title="Remove">
+                  <DeleteButton
+                    onClick={() => {
+                      const newEvents = eventsData.filter(
+                        (_, ind) => ind !== index
+                      );
+                      setEvents(newEvents);
+                      deleteUserFromEventByID(event.id);
+                    }}
+                  >
+                    <DeleteIcon stroke={theme.primary} />
+                  </DeleteButton>
+                </td>
+              </BodyRows>
+            ))}
+        </Table>
+      )}
+    </TableContainer>
+  );
 };
 
 export default UserEventsTable;
@@ -114,44 +105,44 @@ const TableContainer = styled.div`
             border: 1;
         }
 
-        /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
 
-        tr {
-            border: 2px solid #ccc;
-            margin-bottom: 8px;
-        }
+    tr {
+      border: 2px solid #ccc;
+      margin-bottom: 8px;
+    }
 
-        td {
-            /* Behave  like a "row" */
-            height: 4rem;
-            border: none;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 50%;
-            white-space: normal;
-            text-align: left;
-        }
+    td {
+      /* Behave  like a "row" */
+      height: 4rem;
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      white-space: normal;
+      text-align: left;
+    }
 
-        td:before {
-            /* Now like a table header */
-            position: absolute;
-            /* Top/left values mimic padding */
-            /* top: 6px; */
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      /* top: 6px; */
 
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-            text-align: left;
-            font-weight: bold;
-        }
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+      font-weight: bold;
+    }
 
-        /*
+    /*
 	Label the data
 	*/
         td:before {
@@ -177,6 +168,26 @@ const TableContainer = styled.div`
             }
         }
     }
+    p,
+    button {
+      margin-top: 30px;
+    }
+    table {
+      width: 70vw;
+      min-width: unset;
+    }
+    tr {
+      :hover {
+        background-color: unset;
+      }
+      :nth-of-type(even) {
+        background-color: unset;
+        :hover {
+          background-color: unset;
+        }
+      }
+    }
+  }
 `;
 
 const Table = styled.table`
@@ -206,46 +217,48 @@ const Table = styled.table`
             min-width: 80px;
         }
     }
+  }
 `;
 const Headers = styled.tr`
-    background-color: ${(props) => props.theme.purple};
+  background-color: ${(props) => props.theme.purple};
 
-    h2 {
-        color: ${(props) => props.theme.blue};
-        text-align: left;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-size: 0.8em;
-    }
+  h2 {
+    color: ${(props) => props.theme.blue};
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
 `;
 const BodyRows = styled.tr`
     border-bottom: thin solid #dddddd;
     p {
-        color: ${props=>props.theme.black};
+        color: ${(props) => props.theme.black};
         margin-bottom: 0;
     }
     :hover {
-        background-color: ${props=>props.theme.blueHover};
+        background-color: ${(props) => props.theme.blueHover};
     }
     :nth-of-type(even) {
-        background-color: ${props=>props.theme.lightBlue};
+        background-color: ${(props) => props.theme.lightBlue};
         :hover {
-            background-color: ${props=>props.theme.blueHover};
+            background-color: ${(props) => props.theme.blueHover};
         }
     }
     :nth-of-type(odd) {
-        background-color: ${props=>props.theme.blue};
+        background-color: ${(props) => props.theme.blue};
         :hover {
-            background-color: ${props=>props.theme.blueHover};
+            background-color: ${(props) => props.theme.blueHover};
         }
     }
+  }
 
     :last-of-type {
-        border-bottom: 3px solid ${props=>props.theme.lightPurple};
+        border-bottom: 3px solid ${(props) => props.theme.lightPurple};
     }
 `;
 
 const DeleteButton = styled(Button)`
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 `;

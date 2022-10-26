@@ -1,7 +1,7 @@
 import { addProduct, addStock } from "../../../axios/posts";
 import { editProduct, editStock } from "../../../axios/puts";
 import { setFormErrors } from "../../../redux/actions/Errors";
-import { setRedirect } from "../../../redux/actions/Redirects";
+import setRedirect from "../../../redux/actions/Redirects";
 import { thumbImg } from "../maps/mapImages";
 
 export async function sendProductData(
@@ -35,4 +35,9 @@ export async function sendProductData(
 
         dispatch(setRedirect("productForm", "/dashboard/artist/inventory"));
     }
+
+    dispatch(setRedirect("productForm", "/dashboard/inventory"));
+  }
 }
+
+export default sendProductData;
