@@ -5,8 +5,7 @@ const pg = require("pg");
 pg.defaults.ssl = true;
 const connectionString =
   process.env.DATABASE_URL ||
-  `postgres://bzwlnqvswwqfqg:${process.env.DB_PASSWORD}` +
-    "@ec2-34-192-72-159.compute-1.amazonaws.com:5432/d40vu6ijteqrv2";
+  `postgres://avljsgdm:fjdtLle4XFsMgPD-9Whp0jJ_eGGnaRkt@otto.db.elephantsql.com/avljsgdm`;
 
 const pool = new pg.Pool({
   max: 50,
