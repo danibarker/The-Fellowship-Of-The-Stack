@@ -1,0 +1,1591 @@
+[debug] [2022-10-27T21:55:37.680Z] ----------------------------------------------------------------------
+[debug] [2022-10-27T21:55:37.681Z] Command:       /Users/daniellebarker/.nvm/versions/node/v16.14.0/bin/node /Users/daniellebarker/.nvm/versions/node/v16.14.0/bin/firebase emulators:start
+[debug] [2022-10-27T21:55:37.682Z] CLI Version:   11.0.1
+[debug] [2022-10-27T21:55:37.682Z] Platform:      darwin
+[debug] [2022-10-27T21:55:37.682Z] Node Version:  v16.14.0
+[debug] [2022-10-27T21:55:37.683Z] Time:          Thu Oct 27 2022 15:55:37 GMT-0600 (Mountain Daylight Time)
+[debug] [2022-10-27T21:55:37.683Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-27T21:55:37.727Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-27T21:55:37.728Z] > authorizing via signed-in user (caseybarker86@gmail.com)
+[debug] [2022-10-27T21:55:37.864Z] java version "18.0.1.1" 2022-04-22
+
+[debug] [2022-10-27T21:55:37.864Z] Java(TM) SE Runtime Environment (build 18.0.1.1+2-6)
+Java HotSpot(TM) 64-Bit Server VM (build 18.0.1.1+2-6, mixed mode, sharing)
+
+[debug] [2022-10-27T21:55:37.867Z] Parsed Java major version: 18
+[info] i  emulators: Starting emulators: functions, hosting, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting, storage"}}
+[debug] [2022-10-27T21:55:37.887Z] [hub] writing locator at /var/folders/6v/y3kvpv1j2qq3c870r09t1dfh0000gn/T/hub-versa-yyc.json
+[warn] ⚠  functions: Port 6000 is restricted by some web browsers, including Chrome. You may want to choose a different port such as 6001. {"metadata":{"emulator":{"name":"functions"},"message":"Port 6000 is restricted by some web browsers, including Chrome. You may want to choose a different port such as 6001."}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-10-27T21:55:38.183Z] defaultcredentials: writing to file /Users/daniellebarker/.config/firebase/caseybarker86_gmail_com_application_default_credentials.json
+[debug] [2022-10-27T21:55:38.185Z] Setting GAC to /Users/daniellebarker/.config/firebase/caseybarker86_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/daniellebarker/.config/firebase/caseybarker86_gmail_com_application_default_credentials.json"}}
+[debug] [2022-10-27T21:55:38.188Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/versa-yyc/adminSdkConfig [none]
+[debug] [2022-10-27T21:55:38.451Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/versa-yyc/adminSdkConfig 200
+[debug] [2022-10-27T21:55:38.451Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/versa-yyc/adminSdkConfig {"projectId":"versa-yyc","storageBucket":"versa-yyc.appspot.com","locationId":"us-central"}
+[debug] [2022-10-27T21:55:38.483Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-10-27T21:55:39.059Z] Temp file directory for storage emulator: /var/folders/6v/y3kvpv1j2qq3c870r09t1dfh0000gn/T/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /var/folders/6v/y3kvpv1j2qq3c870r09t1dfh0000gn/T/firebase/storage/blobs"}}
+[debug] [2022-10-27T21:55:39.065Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/versa-yyc/sites 
+[debug] [2022-10-27T21:55:39.741Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/versa-yyc/sites 200
+[debug] [2022-10-27T21:55:39.742Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/versa-yyc/sites {"sites":[{"name":"projects/versa-yyc/sites/versa-yyc","defaultUrl":"https://versa-yyc.web.app","appId":"1:294533216256:web:6f936528f60be41e7540e5","type":"DEFAULT_SITE"}]}
+[debug] [2022-10-27T21:55:39.742Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/versa-yyc/webApps/1:294533216256:web:6f936528f60be41e7540e5/config [none]
+[debug] [2022-10-27T21:55:40.252Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/versa-yyc/webApps/1:294533216256:web:6f936528f60be41e7540e5/config 200
+[debug] [2022-10-27T21:55:40.253Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/versa-yyc/webApps/1:294533216256:web:6f936528f60be41e7540e5/config {"projectId":"versa-yyc","appId":"1:294533216256:web:6f936528f60be41e7540e5","storageBucket":"versa-yyc.appspot.com","locationId":"us-central","apiKey":"AIzaSyBGst9KRoCQra_SzP7jSyiSImHhgTpd3hY","authDomain":"versa-yyc.firebaseapp.com","messagingSenderId":"294533216256"}
+[info] i  hosting: Serving hosting files from: frontend/build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mfrontend/build\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:6001 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:6001\u001b[22m\u001b[24m"}}
+[debug] [2022-10-27T21:55:40.375Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-10-27T21:55:40.375Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-10-27T21:55:40.375Z] Starting Emulator UI with command {"binary":"node","args":["--dns-result-order=ipv4first","/Users/daniellebarker/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"--dns-result-order=ipv4first\",\"/Users/daniellebarker/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-10-27T21:55:40.461Z] Web / API server started at localhost:6002
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:6002\n"}}
+[info] i  functions: Watching "/Users/daniellebarker/programming/personal/The-Fellowship-Of-The-Stack/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/daniellebarker/programming/personal/The-Fellowship-Of-The-Stack/functions\" for Cloud Functions..."}}
+[debug] [2022-10-27T21:55:40.640Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] ⚠  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-10-27T21:55:41.515Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-10-27T21:55:41.515Z] Building nodejs source
+[debug] [2022-10-27T21:55:41.515Z] Analyzing nodejs backend spec
+[debug] [2022-10-27T21:55:41.516Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-10-27T21:55:41.644Z] Serving at port 9005
+
+[debug] [2022-10-27T21:55:41.683Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-10-27T21:55:41.687Z] shutdown requested via /__/quitquitquit
+
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:6002                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:6000 │ http://localhost:6002/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ localhost:6001 │ n/a                             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Storage   │ localhost:9199 │ http://localhost:6002/storage   │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-10-27T22:06:09.011Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:06:09.012Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666908369011","timestamp":"2022-10-27T16:06:09.011Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images/","type":"storage#object"},"data":{"kind":"#storage#object","name":"images/","bucket":"versa-yyc.appspot.com","generation":"1666908369008","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-10-27T16:06:09.007Z","updated":"2022-10-27T16:06:09.009Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"jDGHyhOUv3rmJ/FsscDUQegw9nU","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----AA==","timeStorageClassUpdated":"2022-10-27T16:06:09.007Z","id":"versa-yyc.appspot.com/images//1666908369008","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2F?generation=1666908369008&alt=media"}}
+[debug] [2022-10-27T22:06:09.021Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:06:09.021Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:06:09.023Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:06:09.023Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"c773b65b-47cd-4887-831f-0f5bb2203fee","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images/","time":"2022-10-27T16:06:09.009Z","data":{"kind":"#storage#object","name":"images/","bucket":"versa-yyc.appspot.com","generation":"1666908369008","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-10-27T16:06:09.007Z","updated":"2022-10-27T16:06:09.009Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"jDGHyhOUv3rmJ/FsscDUQegw9nU","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----AA==","timeStorageClassUpdated":"2022-10-27T16:06:09.007Z","id":"versa-yyc.appspot.com/images//1666908369008","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2F?generation=1666908369008&alt=media"}}
+[debug] [2022-10-27T22:06:09.031Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:06:09.031Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[debug] [2022-10-27T22:08:27.161Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:08:27.161Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666908507160","timestamp":"2022-10-27T16:08:27.160Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666908507134","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:08:27.133Z","updated":"2022-10-27T16:08:27.153Z","storageClass":"STANDARD","size":"1536104","md5Hash":"N/t1rRpiAiRS6vh4TZCEsw==","etag":"loAZwRkvZ8g7zpb+BM1v2TCGBHw","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----mw==","timeStorageClassUpdated":"2022-10-27T16:08:27.133Z","id":"versa-yyc.appspot.com/images/1666908507134","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666908507134&alt=media"}}
+[debug] [2022-10-27T22:08:27.166Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:08:27.166Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:08:27.166Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:08:27.167Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"53f9c0a0-11c9-4c19-aee3-a1e084c3a0d1","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:08:27.153Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666908507134","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:08:27.133Z","updated":"2022-10-27T16:08:27.153Z","storageClass":"STANDARD","size":"1536104","md5Hash":"N/t1rRpiAiRS6vh4TZCEsw==","etag":"loAZwRkvZ8g7zpb+BM1v2TCGBHw","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----mw==","timeStorageClassUpdated":"2022-10-27T16:08:27.133Z","id":"versa-yyc.appspot.com/images/1666908507134","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666908507134&alt=media"}}
+[debug] [2022-10-27T22:08:27.169Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:08:27.169Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:11:34.800Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:11:34.801Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666908694800","timestamp":"2022-10-27T16:11:34.800Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666908694776","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:11:34.775Z","updated":"2022-10-27T16:11:34.783Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"BVdbIOxD1mFCAW25pIQgVbh4zJs","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:11:34.775Z","id":"versa-yyc.appspot.com/images/1666908694776","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666908694776&alt=media"}}
+[debug] [2022-10-27T22:11:34.804Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:11:34.804Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:11:34.804Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:11:34.804Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"9b00653c-f18e-42d7-bf37-5078c0d82520","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:11:34.783Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666908694776","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:11:34.775Z","updated":"2022-10-27T16:11:34.783Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"BVdbIOxD1mFCAW25pIQgVbh4zJs","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:11:34.775Z","id":"versa-yyc.appspot.com/images/1666908694776","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666908694776&alt=media"}}
+[debug] [2022-10-27T22:11:34.812Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:11:34.812Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:14:04.085Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:14:04.085Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666908844084","timestamp":"2022-10-27T16:14:04.084Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666908844052","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:14:04.051Z","updated":"2022-10-27T16:14:04.062Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"lxjZ3310aInRD1xHitYzoUJtGOM","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:14:04.051Z","id":"versa-yyc.appspot.com/images/1666908844052","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666908844052&alt=media"}}
+[debug] [2022-10-27T22:14:04.087Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:14:04.087Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:14:04.088Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:14:04.088Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"7587f2ab-9b4d-4907-a4f2-ca6c32f6937b","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:14:04.062Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666908844052","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:14:04.051Z","updated":"2022-10-27T16:14:04.062Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"lxjZ3310aInRD1xHitYzoUJtGOM","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:14:04.051Z","id":"versa-yyc.appspot.com/images/1666908844052","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666908844052&alt=media"}}
+[debug] [2022-10-27T22:14:04.090Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:14:04.090Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:17:36.700Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:17:36.700Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909056699","timestamp":"2022-10-27T16:17:36.699Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909056662","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:17:36.662Z","updated":"2022-10-27T16:17:36.677Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"DsPZfCdXX2EAAXXibVmvkYuz2Bs","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:17:36.662Z","id":"versa-yyc.appspot.com/images/1666909056662","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909056662&alt=media"}}
+[debug] [2022-10-27T22:17:36.703Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:17:36.703Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:17:36.703Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:17:36.704Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"62cef89b-3f84-4060-baa3-ba4ff17ea1a0","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:17:36.677Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909056662","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:17:36.662Z","updated":"2022-10-27T16:17:36.677Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"DsPZfCdXX2EAAXXibVmvkYuz2Bs","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:17:36.662Z","id":"versa-yyc.appspot.com/images/1666909056662","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909056662&alt=media"}}
+[debug] [2022-10-27T22:17:36.705Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:17:36.705Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:18:21.519Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:18:21.519Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909101519","timestamp":"2022-10-27T16:18:21.519Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909101503","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:18:21.502Z","updated":"2022-10-27T16:18:21.511Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"iflRjzW7a1ZzHlcerTfO8r8PN5I","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:18:21.502Z","id":"versa-yyc.appspot.com/images/1666909101503","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909101503&alt=media"}}
+[debug] [2022-10-27T22:18:21.522Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:18:21.522Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:18:21.523Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:18:21.523Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"5d4b101c-cc01-4042-9c66-76afe7368b6f","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:18:21.511Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909101503","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:18:21.502Z","updated":"2022-10-27T16:18:21.511Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"iflRjzW7a1ZzHlcerTfO8r8PN5I","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:18:21.502Z","id":"versa-yyc.appspot.com/images/1666909101503","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909101503&alt=media"}}
+[debug] [2022-10-27T22:18:21.526Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:18:21.526Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:18:51.815Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:18:51.816Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909131815","timestamp":"2022-10-27T16:18:51.815Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909131798","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:18:51.797Z","updated":"2022-10-27T16:18:51.805Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"wOn2V4RG+pU9cshT1LPmZ08VTPU","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:18:51.797Z","id":"versa-yyc.appspot.com/images/1666909131798","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909131798&alt=media"}}
+[debug] [2022-10-27T22:18:51.821Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:18:51.821Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:18:51.821Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:18:51.821Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"f43e6ca0-5fc3-442c-a6ba-c4bf50bf7132","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:18:51.805Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909131798","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:18:51.797Z","updated":"2022-10-27T16:18:51.805Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"wOn2V4RG+pU9cshT1LPmZ08VTPU","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:18:51.797Z","id":"versa-yyc.appspot.com/images/1666909131798","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909131798&alt=media"}}
+[debug] [2022-10-27T22:18:51.825Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:18:51.825Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:20:33.980Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:20:33.981Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909233980","timestamp":"2022-10-27T16:20:33.980Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909233967","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:20:33.966Z","updated":"2022-10-27T16:20:33.974Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"iLk3Helrm9xKv9f5aLg6bsY/jRk","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:20:33.966Z","id":"versa-yyc.appspot.com/images/1666909233967","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909233967&alt=media"}}
+[debug] [2022-10-27T22:20:33.987Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:20:33.987Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:20:33.993Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:20:33.993Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"1ac2a22b-d056-45f8-806c-ff46b355a65d","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:20:33.974Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909233967","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:20:33.966Z","updated":"2022-10-27T16:20:33.974Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"iLk3Helrm9xKv9f5aLg6bsY/jRk","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:20:33.966Z","id":"versa-yyc.appspot.com/images/1666909233967","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909233967&alt=media"}}
+[debug] [2022-10-27T22:20:33.999Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:20:34.000Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:22:38.187Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:22:38.187Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909358186","timestamp":"2022-10-27T16:22:38.186Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909358160","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:22:38.159Z","updated":"2022-10-27T16:22:38.170Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"V/kk3l23r7NV5UHpluR2DnS3jak","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:22:38.159Z","id":"versa-yyc.appspot.com/images/1666909358160","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909358160&alt=media"}}
+[debug] [2022-10-27T22:22:38.191Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:22:38.191Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:22:38.191Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:22:38.191Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"530ed3ec-3f0c-4b20-bf71-d3c62ab8b3fc","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:22:38.170Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909358160","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:22:38.159Z","updated":"2022-10-27T16:22:38.170Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"V/kk3l23r7NV5UHpluR2DnS3jak","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:22:38.159Z","id":"versa-yyc.appspot.com/images/1666909358160","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909358160&alt=media"}}
+[debug] [2022-10-27T22:22:38.193Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:22:38.193Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:24:21.444Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:24:21.445Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909461444","timestamp":"2022-10-27T16:24:21.444Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images","type":"storage#object"},"data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909461411","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:24:21.411Z","updated":"2022-10-27T16:24:21.429Z","storageClass":"STANDARD","size":"1536104","md5Hash":"N/t1rRpiAiRS6vh4TZCEsw==","etag":"kfqN0Ih0qiC3yPRYzs52K0yc2mc","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----mw==","timeStorageClassUpdated":"2022-10-27T16:24:21.411Z","id":"versa-yyc.appspot.com/images/1666909461411","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909461411&alt=media"}}
+[debug] [2022-10-27T22:24:21.455Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:24:21.455Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:24:21.456Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:24:21.456Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"9a598795-bbc3-41ad-a570-a768c45c0a14","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images","time":"2022-10-27T16:24:21.429Z","data":{"kind":"#storage#object","name":"images","bucket":"versa-yyc.appspot.com","generation":"1666909461411","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:24:21.411Z","updated":"2022-10-27T16:24:21.429Z","storageClass":"STANDARD","size":"1536104","md5Hash":"N/t1rRpiAiRS6vh4TZCEsw==","etag":"kfqN0Ih0qiC3yPRYzs52K0yc2mc","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----mw==","timeStorageClassUpdated":"2022-10-27T16:24:21.411Z","id":"versa-yyc.appspot.com/images/1666909461411","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images?generation=1666909461411&alt=media"}}
+[debug] [2022-10-27T22:24:21.465Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:24:21.465Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:27:43.547Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:27:43.547Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909663547","timestamp":"2022-10-27T16:27:43.547Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","type":"storage#object"},"data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666909663502","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:27:43.501Z","updated":"2022-10-27T16:27:43.518Z","storageClass":"STANDARD","size":"1536104","md5Hash":"N/t1rRpiAiRS6vh4TZCEsw==","etag":"ab0J7ZUCLZ87fsXvRKH1WaptQsU","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----mw==","timeStorageClassUpdated":"2022-10-27T16:27:43.501Z","id":"versa-yyc.appspot.com/images/undefined/1666909663502","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666909663502&alt=media"}}
+[debug] [2022-10-27T22:27:43.553Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:27:43.553Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:27:43.553Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:27:43.553Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"eaff1295-ba6a-49d5-9670-6977fca9a474","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","time":"2022-10-27T16:27:43.518Z","data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666909663502","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:27:43.501Z","updated":"2022-10-27T16:27:43.518Z","storageClass":"STANDARD","size":"1536104","md5Hash":"N/t1rRpiAiRS6vh4TZCEsw==","etag":"ab0J7ZUCLZ87fsXvRKH1WaptQsU","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----mw==","timeStorageClassUpdated":"2022-10-27T16:27:43.501Z","id":"versa-yyc.appspot.com/images/undefined/1666909663502","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666909663502&alt=media"}}
+[debug] [2022-10-27T22:27:43.556Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:27:43.556Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:29:38.129Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:29:38.131Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666909778126","timestamp":"2022-10-27T16:29:38.126Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","type":"storage#object"},"data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666909778100","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:29:38.100Z","updated":"2022-10-27T16:29:38.109Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"qOLd6H/EXE39+BiGKA52u1kznKg","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:29:38.100Z","id":"versa-yyc.appspot.com/images/undefined/1666909778100","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666909778100&alt=media"}}
+[debug] [2022-10-27T22:29:38.134Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:29:38.134Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:29:38.134Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:29:38.134Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"14149827-2ff1-47e1-a57f-03f492e32303","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","time":"2022-10-27T16:29:38.109Z","data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666909778100","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:29:38.100Z","updated":"2022-10-27T16:29:38.109Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"qOLd6H/EXE39+BiGKA52u1kznKg","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:29:38.100Z","id":"versa-yyc.appspot.com/images/undefined/1666909778100","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666909778100&alt=media"}}
+[debug] [2022-10-27T22:29:38.140Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:29:38.140Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:34:35.424Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:34:35.425Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666910075424","timestamp":"2022-10-27T16:34:35.424Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","type":"storage#object"},"data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666910075404","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:34:35.403Z","updated":"2022-10-27T16:34:35.410Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"0yfzezCOVD4aJuR0j8xlwOwrjS4","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:34:35.403Z","id":"versa-yyc.appspot.com/images/undefined/1666910075404","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666910075404&alt=media"}}
+[debug] [2022-10-27T22:34:35.432Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:34:35.432Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T22:34:35.432Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T22:34:35.432Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"adf2d843-8a14-44f6-888e-e8dcc06aa565","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","time":"2022-10-27T16:34:35.410Z","data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666910075404","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T16:34:35.403Z","updated":"2022-10-27T16:34:35.410Z","storageClass":"STANDARD","size":"774288","md5Hash":"ZRwqIrZm+YuLdEpsXFFtIg==","etag":"0yfzezCOVD4aJuR0j8xlwOwrjS4","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----WQ==","timeStorageClassUpdated":"2022-10-27T16:34:35.403Z","id":"versa-yyc.appspot.com/images/undefined/1666910075404","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666910075404&alt=media"}}
+[debug] [2022-10-27T22:34:35.438Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T22:34:35.438Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T23:32:59.902Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T23:32:59.903Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"eventId":"1666913579902","timestamp":"2022-10-27T17:32:59.902Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","type":"storage#object"},"data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666913579869","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T17:32:59.868Z","updated":"2022-10-27T17:32:59.889Z","storageClass":"STANDARD","size":"1542047","md5Hash":"xuGqFbSNeNNjLW+rKca+Kw==","etag":"YVeK25E74zYjOKcjUksq9PU05hA","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----nA==","timeStorageClassUpdated":"2022-10-27T17:32:59.868Z","id":"versa-yyc.appspot.com/images/undefined/1666913579869","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666913579869&alt=media"}}
+[debug] [2022-10-27T23:32:59.909Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T23:32:59.909Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-27T23:32:59.909Z] >>> [apiv2][query] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast [none]
+[debug] [2022-10-27T23:32:59.909Z] >>> [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"specversion":"1","id":"ecd7027b-0a16-4af7-abe8-60846c78cdc9","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/versa-yyc.appspot.com/objects/images/undefined","time":"2022-10-27T17:32:59.889Z","data":{"kind":"#storage#object","name":"images/undefined","bucket":"versa-yyc.appspot.com","generation":"1666913579869","metageneration":"1","contentType":"image/jpeg","contentDisposition":"inline","timeCreated":"2022-10-27T17:32:59.868Z","updated":"2022-10-27T17:32:59.889Z","storageClass":"STANDARD","size":"1542047","md5Hash":"xuGqFbSNeNNjLW+rKca+Kw==","etag":"YVeK25E74zYjOKcjUksq9PU05hA","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"----nA==","timeStorageClassUpdated":"2022-10-27T17:32:59.868Z","id":"versa-yyc.appspot.com/images/undefined/1666913579869","selfLink":"http://localhost:9199/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined","mediaLink":"http://localhost:9199/download/storage/v1/b/versa-yyc.appspot.com/o/images%2Fundefined?generation=1666913579869&alt=media"}}
+[debug] [2022-10-27T23:32:59.917Z] <<< [apiv2][status] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast 200
+[debug] [2022-10-27T23:32:59.917Z] <<< [apiv2][body] POST http://localhost:6000/functions/projects/versa-yyc/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-10-28T01:33:53.661Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[debug] [2022-10-28T01:33:53.668Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.669Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.669Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.670Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.670Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.671Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.672Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.672Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.672Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.673Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.673Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.674Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.674Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.674Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.675Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.675Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.676Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.676Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.677Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.677Z] Ignoring signal SIGHUP due to short delay of 16ms
+[debug] [2022-10-28T01:33:53.677Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.677Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.678Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.678Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.679Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.679Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.679Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.679Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.680Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.680Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.680Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.681Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.681Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[debug] [2022-10-28T01:33:53.685Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at DerivedLogger.Readable.read (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:483:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.686Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.686Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.686Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.687Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.687Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.687Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.688Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.688Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[warn] ⚠  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  hosting: Stopping Hosting Emulator {"metadata":{"emulator":{"name":"hosting"},"message":"Stopping Hosting Emulator"}}
+[info] i  storage: Stopping Storage Emulator {"metadata":{"emulator":{"name":"storage"},"message":"Stopping Storage Emulator"}}
+[debug] [2022-10-28T01:33:53.695Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at DerivedLogger.Readable.read (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:483:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.696Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.697Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.697Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.698Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.698Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.698Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.698Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.700Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.701Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at DerivedLogger.Readable.read (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:483:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.702Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.702Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.703Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.703Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.703Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.703Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.703Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.704Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.707Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at DerivedLogger.Readable.read (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:483:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.707Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.708Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.708Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.708Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.708Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.709Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.709Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.709Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.714Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at DerivedLogger.Readable.read (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:483:26)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.715Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.715Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-10-28T01:33:53.716Z] Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:160:15)
+    at writeGeneric (node:internal/stream_base_commons:151:3)
+    at WriteStream.Socket._writeGeneric (node:net:795:11)
+    at WriteStream.Socket._write (node:net:807:8)
+    at writeOrBuffer (node:internal/streams/writable:389:12)
+    at _write (node:internal/streams/writable:330:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:334:10)
+    at Console.log (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (node:events:532:35)
+    at DerivedLogger.emit (node:domain:475:12)
+    at addChunk (/Users/daniellebarker/.nvm/versions/node/v16.14.0/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)

@@ -1,0 +1,45 @@
+import React from "react";
+import * as V from "victory";
+import theme from "../Theme";
+// import { Circle } from "../../../../images/icons";
+import { PieContainer } from "./AnalyticsContainers";
+
+const Pie = ({ data }) => (
+  <PieContainer>
+    <V.VictoryPie
+      width="400"
+      height="300"
+      padding={{ top: 0, left: 100, right: 100 }}
+      padAngle={2}
+      innerRadius={25}
+      style={{ labels: { fontSize: 15 } }}
+      labels={({ datum }) => `${datum.x}\n $${datum.y}`}
+      colorScale={[
+        theme.purple,
+        `${theme.purple}cc`,
+        `${theme.purple}99`,
+        `${theme.purple}66`,
+        `${theme.purple}33`
+      ]}
+      data={data
+        .sort((one, two) => +two.sum - +one.sum)
+
+        .map((sales) => ({
+          y: +sales.sum,
+          x: `${sales.day}/${sales.month}/${sales.year}`
+        }))
+        .reduce((reduced, current, index) => {
+          const newArray = reduced;
+          if (index < 4) {
+            newArray.push(current);
+          } else {
+            newArray[3].x = "Other";
+            newArray[3].y += current.y;
+          }
+          return newArray;
+        }, [])}
+    />
+  </PieContainer>
+);
+
+export default Pie;
