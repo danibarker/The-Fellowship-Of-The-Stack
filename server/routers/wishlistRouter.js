@@ -21,7 +21,7 @@ router.get("/", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -41,7 +41,7 @@ router.put("/add", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -60,7 +60,7 @@ SELECT id FROM wishlists WHERE user.id = ${req.user.id}`);
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });

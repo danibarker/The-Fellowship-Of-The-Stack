@@ -1,4 +1,6 @@
+/* eslint-disable no-param-reassign */
 const express = require("express");
+
 const router = new express.Router();
 const client = require("../db");
 const auth = require("../middleware/auth");
@@ -109,7 +111,7 @@ router.get("/customer-orders", auth, async (req, res) => {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric",
+        day: "numeric"
       };
 
       let ordersDate = new Date(order.date);
@@ -118,7 +120,7 @@ router.get("/customer-orders", auth, async (req, res) => {
 
       let orderTime = ordersDate.toLocaleTimeString([], {
         hour: "2-digit",
-        minute: "2-digit",
+        minute: "2-digit"
       });
       order.orderTime = orderTime;
       order.orderDate = orderDate;
@@ -161,7 +163,7 @@ router.get("/recent-orders", auth, async (req, res) => {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric",
+        day: "numeric"
       };
 
       let ordersDate = new Date(order.date);
@@ -170,7 +172,7 @@ router.get("/recent-orders", auth, async (req, res) => {
 
       let orderTime = ordersDate.toLocaleTimeString([], {
         hour: "2-digit",
-        minute: "2-digit",
+        minute: "2-digit"
       });
       order.orderTime = orderTime;
       order.orderDate = orderDate;
@@ -205,7 +207,7 @@ router.get("/shopper-order/:orderid", auth, async (req, res) => {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric",
+        day: "numeric"
       };
 
       let ordersDate = new Date(order.date);
@@ -214,7 +216,7 @@ router.get("/shopper-order/:orderid", auth, async (req, res) => {
 
       let orderTime = ordersDate.toLocaleTimeString([], {
         hour: "2-digit",
-        minute: "2-digit",
+        minute: "2-digit"
       });
       order.orderTime = orderTime;
       order.orderDate = orderDate;
@@ -229,7 +231,7 @@ router.get("/shopper-order/:orderid", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -250,7 +252,7 @@ router.get("/order/:orderid", auth, async (req, res) => {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric",
+        day: "numeric"
       };
 
       let ordersDate = new Date(order.date);
@@ -259,7 +261,7 @@ router.get("/order/:orderid", auth, async (req, res) => {
 
       let orderTime = ordersDate.toLocaleTimeString([], {
         hour: "2-digit",
-        minute: "2-digit",
+        minute: "2-digit"
       });
       order.orderTime = orderTime;
       order.orderDate = orderDate;
@@ -274,7 +276,7 @@ router.get("/order/:orderid", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -289,7 +291,7 @@ router.get("/driver/order-to-fulfill", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -306,7 +308,7 @@ router.get("/driver/past-deliveries", auth, async (req, res) => {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric",
+        day: "numeric"
       };
 
       let orderShipDate = new Date(order.ship_date);
@@ -319,7 +321,7 @@ router.get("/driver/past-deliveries", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -334,7 +336,7 @@ router.put("/driver/order-to-fulfill/add/:orderid", auth, (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -348,7 +350,7 @@ router.put("/driver/order-to-fulfill/remove/:orderid", auth, (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -371,7 +373,7 @@ router.get("/driver/order-to-fulfill/:orderid", async (req, res) => {
     res.json(singleDelivery.rows);
   } catch (err) {
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -386,14 +388,16 @@ router.get("/driver/past/:orderid", auth, async (req, res) => {
             INNER JOIN order_items i ON o.id = i.order_id 
             INNER JOIN products p ON p.id = i.product_id 
             inner join users u ON p.artist_id = u.id
-            WHERE o.status = 'Delivered' AND o.deliverer_id = ${req.user.id} AND o.id = ${req.params.orderid}
+            WHERE o.status = 'Delivered'
+            AND o.deliverer_id = ${req.user.id} 
+            AND o.id = ${req.params.orderid}
             `
     );
     res.json(pastDeliveryItems.rows);
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -415,7 +419,7 @@ router.get("/driver/assigned-pickups", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -430,14 +434,16 @@ router.get("/driver/assigned-pickups/:artistid", auth, async (req, res) => {
             INNER JOIN order_items i ON o.id = i.order_id 
             INNER JOIN products p ON p.id = i.product_id 
             inner join users u ON p.artist_id = u.id
-            WHERE o.status = 'Driver Assigned' AND o.deliverer_id = ${req.user.id} and p.artist_id = ${req.params.artistid}
+            WHERE o.status = 'Driver Assigned'
+            AND o.deliverer_id = ${req.user.id} 
+            AND p.artist_id = ${req.params.artistid}
             `
     );
     res.json(assignedDeliveries.rows);
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -452,7 +458,9 @@ router.get("/driver/ready-deliveries", auth, async (req, res) => {
             INNER JOIN order_items i ON o.id = i.order_id 
             INNER JOIN products p ON p.id = i.product_id 
             inner join users u ON p.artist_id = u.id
-            WHERE (o.status = 'Driver Assigned' or o.status = 'Delivery in Progress') AND o.deliverer_id = ${req.user.id}
+            WHERE (o.status = 'Driver Assigned'
+            OR o.status = 'Delivery in Progress')
+            AND o.deliverer_id = ${req.user.id}
             `
     );
 
@@ -492,7 +500,7 @@ router.get("/driver/ready-deliveries", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -516,7 +524,7 @@ router.put("/driver/deliveries/update/:orderid", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
@@ -531,7 +539,7 @@ router.put("/driver/assigned-pickups/", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });

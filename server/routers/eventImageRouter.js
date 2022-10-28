@@ -11,9 +11,9 @@ const router = express.Router();
 const storage = multer.memoryStorage({
   destination: function (req, files, callback) {
     callback(null, "");
-  },
+  }
 });
-var multipleUpload = multer({ storage: storage }).array("file");
+const multipleUpload = multer({ storage }).array("file");
 const BUCKET_NAME = "versabucket";
 const accessKeyId = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
 
@@ -57,7 +57,7 @@ router.post("/add", multipleUpload, auth, async function (req, res) {
     accessKeyId: accessKeyId,
     secretAccessKey: secretKey,
     bucketName: BUCKET_NAME,
-    dirName: "images",
+    dirName: "images"
   });
   if (!req.user.is_artist) {
     res.status(500).send("Not Authorized");
@@ -76,7 +76,7 @@ router.post("/add", multipleUpload, auth, async function (req, res) {
           Bucket: BUCKET_NAME + "/eventImages",
           Key: filename + ".jpeg",
           Body: item.buffer,
-          ACL: "public-read",
+          ACL: "public-read"
         };
         s3bucket.upload(params, function (err, data) {
           if (err) {
@@ -87,7 +87,7 @@ router.post("/add", multipleUpload, auth, async function (req, res) {
               res.status(201).json({
                 error: false,
                 Message: "File Uploaded Successfully",
-                Data: ResponseData,
+                Data: ResponseData
               });
             }
           }
@@ -129,7 +129,7 @@ router.get("/byEID/:id", async (req, res) => {
   }
 });
 
-//delete image
+// delete image
 
 router.delete("/delete/:id", auth, async (req, res) => {
   const id = req.params.id;
@@ -152,7 +152,7 @@ router.delete("/delete/:id", auth, async (req, res) => {
     } catch (err) {
       console.error(err.message);
       res.send({
-        message: "error",
+        message: "error"
       });
     }
   }

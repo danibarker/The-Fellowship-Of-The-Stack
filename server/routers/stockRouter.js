@@ -1,8 +1,11 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
 const express = require("express");
+
 const router = new express.Router();
 const client = require("../db");
 const auth = require("../middleware/auth");
-//get all variations of specific product in stock db
+// get all variations of specific product in stock db
 router.get("/getByVariation/:id/:colour/:size", async (req, res) => {
   const { id, colour, size } = req.params;
 

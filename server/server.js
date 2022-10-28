@@ -1,17 +1,17 @@
-let express = require("express");
-require("dotenv").config();
-let cors = require("cors");
-const crypto = require("crypto");
+const express = require("express");
+const cors = require("cors");
 const path = require("path");
+
 const PORT = process.env.PORT || 5555;
+const cookieParser = require("cookie-parser");
 const apiRouter = require("./routers/apiRouter");
-var cookieParser = require("cookie-parser");
-const {
-  emailsSent,
-  sendReminder,
-} = require("./helperFunctions/sendGridFunctions");
-const client = require("./db");
-let app = express();
+// const {
+//   emailsSent,
+//   sendReminder
+// } = require("./helperFunctions/sendGridFunctions");
+require("./db");
+
+const app = express();
 app.use(cookieParser());
 app.use(express.json());
 // app.use(cors({ credentials: true }));
@@ -24,7 +24,7 @@ app.listen(PORT, () => {
 
 app.use(express.static("../frontend/versa/build"));
 
-//ROUTES
+// ROUTES
 
 // app.use("*", async (req, res, next) => {
 //   let sent = await emailsSent(

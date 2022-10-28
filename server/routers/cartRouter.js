@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = new express.Router();
 const client = require("../db");
 const optionalAuth = require("../middleware/optionalAuth");

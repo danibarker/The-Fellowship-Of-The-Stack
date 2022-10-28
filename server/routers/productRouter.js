@@ -1,9 +1,12 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 const express = require("express");
+
 const router = new express.Router();
 const client = require("../db");
 const auth = require("../middleware/auth");
 
-//search products by keyword found in title and description
+// search products by keyword found in title and description
 router.get("/search/:searchQuery", async (req, res) => {
   let query = req.params.searchQuery.toUpperCase().split(" ");
   let queryString = "";
@@ -166,7 +169,7 @@ router.post("/create", auth, async (req, res) => {
           JSON.stringify(colours),
           +req.user.id,
           JSON.stringify(sizes),
-          materials,
+          materials
         ]
       );
       res.json(productInfo.rows[0]);
@@ -193,7 +196,7 @@ router.put("/edit/:id", auth, async (req, res) => {
     }
     if (Object.keys(req.body).length === 0) {
       res.send({
-        message: "Theres nobody!",
+        message: "Theres nobody!"
       });
     }
     try {
@@ -223,7 +226,7 @@ router.put("/edit/:id", auth, async (req, res) => {
           JSON.stringify(sizes),
           materials,
           status,
-          id,
+          id
         ]
       );
       if (status === "Backorder" || status === "Discontinue") {
@@ -235,7 +238,7 @@ router.put("/edit/:id", auth, async (req, res) => {
     } catch (err) {
       console.error(err.message);
       res.send({
-        message: "error",
+        message: "error"
       });
     }
   }
@@ -266,7 +269,7 @@ router.delete("/delete/:id", auth, async (req, res) => {
     } catch (err) {
       console.error(err.message);
       res.send({
-        message: "error",
+        message: "error"
       });
     }
   }

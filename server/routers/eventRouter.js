@@ -1,13 +1,15 @@
+/* eslint-disable no-param-reassign */
 const express = require("express");
+
 const router = new express.Router();
 const client = require("../db");
 const {
   goingToEvent,
-  notGoingToEvent,
+  notGoingToEvent
 } = require("../helperFunctions/sendGridFunctions");
 const auth = require("../middleware/auth");
 
-//search events by keyword found in title and description or artist name
+// search events by keyword found in title and description or artist name
 router.get("/search/:searchQuery", async (req, res) => {
   let query = req.params.searchQuery.toUpperCase().split(" ");
   let queryString = "";
@@ -62,8 +64,8 @@ router.get("/get/:id", async (req, res) => {
   }
 });
 
-//Get all products
-//change this to use auth instead of req.params
+// Get all products
+// change this to use auth instead of req.params
 router.get("/artistsEvents/:id", async (req, res) => {
   try {
     const result = await client.query(
@@ -123,7 +125,7 @@ router.get("/myArtistsEvents/", auth, async (req, res) => {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric",
+        day: "numeric"
       };
 
       let resultsStartDate = new Date(result.start_time);
@@ -160,7 +162,8 @@ router.get("/attending/", auth, async (req, res) => {
             INNER JOIN
             users u
             ON u.id = e.host
-            INNER JOIN (SELECT event_id, attendee FROM events_attendees WHERE attendee = ${req.user.id}) a
+            INNER JOIN (SELECT event_id, attendee
+            FROM events_attendees WHERE attendee = ${req.user.id}) a
             ON a.event_id = e.id`
     );
     const results = result.rows;
@@ -198,7 +201,7 @@ router.get("/allEvents", async (req, res) => {
   }
 });
 
-//create event
+// create event
 
 router.post("/create", auth, async (req, res) => {
   if (!req.user.is_artist) {
@@ -213,7 +216,7 @@ router.post("/create", auth, async (req, res) => {
         startTime,
         endTime,
         location,
-        type,
+        type
       } = req.body.data;
       console.log(req.body);
       let eventInfo = await client.query(
@@ -234,7 +237,7 @@ router.post("/create", auth, async (req, res) => {
           startTime,
           endTime,
           location,
-          type,
+          type
         ]
       );
       console.log(eventInfo);
@@ -267,7 +270,7 @@ router.put("/edit/:eventId", auth, async (req, res) => {
     }
     if (Object.keys(req.body).length === 0) {
       res.send({
-        message: "Theres nobody!",
+        message: "Theres nobody!"
       });
     }
     try {
@@ -280,11 +283,11 @@ router.put("/edit/:eventId", auth, async (req, res) => {
         startTime,
         endTime,
         location,
-        type,
+        type
       } = req.body.data;
 
       let current = await client.query(`SELECT * FROM events WHERE id = $1 `, [
-        eventId,
+        eventId
       ]);
       const currentEvent = current.rows[0];
 
@@ -314,7 +317,7 @@ router.put("/edit/:eventId", auth, async (req, res) => {
           endTime,
           location,
           type,
-          eventId,
+          eventId
         ]
       );
 
@@ -322,7 +325,7 @@ router.put("/edit/:eventId", auth, async (req, res) => {
     } catch (err) {
       console.error(err.message, "/edit/:id");
       res.send({
-        message: "error",
+        message: "error"
       });
     }
   }
@@ -347,14 +350,14 @@ router.delete("/delete/:id", auth, async (req, res) => {
     try {
       await client.query("DELETE FROM event_images WHERE event_id = $1", [id]);
       await client.query("DELETE FROM events_attendees WHERE event_id = $1", [
-        id,
+        id
       ]);
       await client.query("DELETE FROM events WHERE id = $1", [id]);
       res.json({ msg: "Event Deleted!" });
     } catch (err) {
       console.error(err.message, "/delete/:id");
       res.send({
-        message: "error",
+        message: "error"
       });
     }
   }
@@ -395,7 +398,7 @@ router.post("/join", auth, async (req, res) => {
   res.send("joined");
 });
 
-//user not going
+// user not going
 
 router.delete("/not-attending/:event", auth, async (req, res) => {
   const event_id = req.params.event;
@@ -416,7 +419,7 @@ router.delete("/not-attending/:event", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message, "/not-attending/:event");
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });

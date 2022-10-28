@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
     const token = req.cookies.token;
     const decoded = jwt.verify(token, process.env.JWT); //gets user id, that gets saved into decoded.id
     const user = await client.query(`SELECT * FROM users WHERE id = $1`, [
-      decoded.id,
+      decoded.id
     ]);
     if (!user.rows) {
       throw new Error("no user");
@@ -18,10 +18,10 @@ const auth = async (req, res, next) => {
     req.user = user.rows[0]; //attaches a user property onto the req, and that user is the obj that it got from the db
     delete req.user.password; //we dont want to pass the password on so we delete it from req.user object
     res.cookie("isArtist", `${req.user.is_artist}`, {
-      maxAge: Infinity + 1,
+      maxAge: Infinity + 1
     });
     res.cookie("isDriver", `${req.user.is_driver}`, {
-      maxAge: Infinity + 1,
+      maxAge: Infinity + 1
     });
     res.cookie("name", req.user.name, { maxAge: Infinity + 1 });
     console.log("req.user", req.user);

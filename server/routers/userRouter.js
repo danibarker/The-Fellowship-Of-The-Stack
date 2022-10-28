@@ -5,11 +5,11 @@ const router = new express.Router();
 const auth = require("../middleware/auth");
 const {
   generateAuthToken,
-  findByCredentials,
+  findByCredentials
 } = require("../helperFunctions/index");
 const {
   newAccount,
-  addToNewsletter,
+  addToNewsletter
 } = require("../helperFunctions/sendGridFunctions");
 
 router.post("/create", async (req, res, next) => {
@@ -25,7 +25,7 @@ router.post("/create", async (req, res, next) => {
       user.address,
       user.isArtist,
       user.isDriver,
-      user.name,
+      user.name
     ]
   );
 
@@ -33,7 +33,7 @@ router.post("/create", async (req, res, next) => {
   const token = generateAuthToken(data.rows[0]);
   await client.query(`INSERT INTO tokens (user_id, token) VALUES ($1, $2)`, [
     data.rows[0].id,
-    token,
+    token
   ]);
 
   const createUser = data.rows[0];
@@ -60,7 +60,7 @@ router.post("/login", async (req, res, next) => {
 
     await client.query(`INSERT INTO tokens (user_id, token) VALUES ($1, $2)`, [
       user.id,
-      token,
+      token
     ]);
     // var hour = 3600000
     // req.session.cookie.expires = new Date(Date.now() + hour)
@@ -116,7 +116,7 @@ router.put("/update", auth, async (req, res, next) => {
       updatedUser.isArtist,
       updatedUser.isDriver,
       updatedUser.name,
-      user.id,
+      user.id
     ]
   );
   res.cookie("isArtist", user.is_artist, { maxAge: Infinity + 1 });

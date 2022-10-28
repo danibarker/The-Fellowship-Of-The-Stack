@@ -122,4 +122,5 @@ const ProductImage = styled.img`
 //         }
 //     }
 // `;
+
 export default ProductCard;

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const router = require("express").Router();
 const client = require("../db");
 router.post("/read", async (req, res) => {
@@ -48,7 +49,7 @@ router.post("/send", async (req, res) => {
   }
 });
 
-//search messages by keyword found in title or user
+// search messages by keyword found in title or user
 router.get("/searchMessages/:searchQuery", async (req, res) => {
   let query = req.params.searchQuery.toUpperCase().split("&");
   let queryString = "";

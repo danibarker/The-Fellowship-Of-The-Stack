@@ -129,7 +129,7 @@ router.get("/byPID/:id", async (req, res) => {
   }
 });
 
-//delete image
+// delete image
 
 router.delete("/delete/:id", auth, async (req, res) => {
   const id = req.params.id;
@@ -152,7 +152,7 @@ router.delete("/delete/:id", auth, async (req, res) => {
     } catch (err) {
       console.error(err.message);
       res.send({
-        message: "error",
+        message: "error"
       });
     }
   }

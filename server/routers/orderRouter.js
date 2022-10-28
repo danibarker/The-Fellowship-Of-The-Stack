@@ -1,10 +1,14 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 const express = require("express");
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 const router = new express.Router();
 const client = require("../db");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const {
   orderConfirmation,
-  orderReadyForPickup,
+  orderReadyForPickup
 } = require("../helperFunctions/sendGridFunctions");
 const auth = require("../middleware/auth");
 const optionalAuth = require("../middleware/optionalAuth");
@@ -13,7 +17,7 @@ router.post("/stripe/payment", (req, res) => {
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
-    currency: "cad",
+    currency: "cad"
   };
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
@@ -33,7 +37,7 @@ router.post("/paid", optionalAuth, async (req, res) => {
     address_line1,
     address_zip,
     address_city,
-    address_country,
+    address_country
   } = req.body.success.card;
   const { deliveryType, deliveryNote } = req.body.payment;
   const pickup = deliveryType === "pickup";
@@ -55,7 +59,7 @@ router.post("/paid", optionalAuth, async (req, res) => {
       pickup
         ? `For pickup`
         : `${address_line1} ${address_zip} ${address_city}, ${address_country}`,
-      deliveryNote,
+      deliveryNote
     ]
   );
 
@@ -70,7 +74,7 @@ router.post("/paid", optionalAuth, async (req, res) => {
         item.id,
         item.itemQuantity,
         item.colour,
-        item.size,
+        item.size
       ]
     );
     const artistIDRes = await client.query(
@@ -90,7 +94,7 @@ router.post("/paid", optionalAuth, async (req, res) => {
         artistID,
         item.colour,
         item.size,
-        new Date().toLocaleString().replace(/\./g, ""),
+        new Date().toLocaleString().replace(/\./g, "")
       ]
     );
 
@@ -115,7 +119,7 @@ router.put("/edit/:orderid", auth, async (req, res) => {
 
   if (orderStatus.length === 0) {
     res.send({
-      message: "You have to give me data to update with!",
+      message: "You have to give me data to update with!"
     });
   }
 
@@ -152,7 +156,7 @@ router.put("/edit/:orderid", auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.send({
-      message: "error",
+      message: "error"
     });
   }
 });
