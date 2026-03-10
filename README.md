@@ -1,44 +1,41 @@
 # The-Fellowship-Of-The-Stack
 
-Team Members:
+## What This Project Does
 
-Muniba
+This project appears to be a web application, potentially involving frontend and backend components, and possibly integrating with Firebase. The existing documentation suggests testing of credit card transactions is a key feature. The overall purpose of the application is unclear based on the provided files.
 
-Danielle
+## Tech Stack
 
-Nic
+*   JavaScript
+*   Firebase (likely for authentication and/or database)
+*   Node.js (for the `functions` directory)
+*   Potentially React (based on the `frontend/versa` directory)
 
-Messele
+## Project Structure
 
-X-----X
-ONLY DO THIS FOR DEMO/
-ONLY 1 PERSON SHOULD BE DOING THIS/
-REST OF US SHOULD PULL:
+The project is organized into several key directories:
 
-To deploy the frontend to heroku after changes, run "npm run build" in "/frontend/versa" and push to github
-X-----X
+*   `frontend`: Contains the frontend application code (likely built with React, given the `versa` subdirectory).
+*   `functions`:  Likely contains Firebase Cloud Functions, written in JavaScript/Node.js.
+*   `other`: Contains miscellaneous files.
+*   `server`:  Suggests a backend server component.
+*   `.env`:  Likely contains environment variables.
+*   `firebase.json`: Firebase configuration file.
 
-TO RUN LOCALLY:
+## Getting Started
 
-1. run "npm run start" from the root folder
-2. from frontend/versa run "npm run start"
-3. then go to localhost:3000 in the browser
+Based on the existing README, the following commands are suggested:
 
-X-----X
+1.  `npm run start` (from the root directory)
+2.  `npm run start` (from the `frontend/versa` directory)
 
-TEST CREDIT CARDS:
+## Status
 
-Use any expiry date that is in the future and any 3 digit CVC
+Incomplete. The project appears to be in development, with testing instructions for credit card transactions included.
 
-4242424242424242    Success
-4000000000009235	Elevated Risk
-4000000000004954	High Risk
-4100000000000019	Fraud
-4000000000000002	General Decline
-4000000000009995	Insufficient Funds
-4000000000009987	Lost Card
-4000000000009979	Stolen
-4000000000000069	Expired
-4000000000000127	Incorrect CVC
-4000000000000119	Processing Error
-4242424242424241	Incorrect number
+## Notes
+
+*   This is a Git repository hosted on GitHub: `https://github.com/danibarker/The-Fellowship-Of-The-Stack.git`.
+*   The existing README contains deployment instructions for the frontend to Heroku, involving `npm run build` and pushing to GitHub.
+*   The `nnn2.sql` file suggests potential database interaction.
+*   The `ui-debug.log` file indicates debugging activity.
